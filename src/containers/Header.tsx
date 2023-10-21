@@ -40,26 +40,27 @@ function Header() {
   ];
 
   return (
-    <div className="flex justify-between items-center p-5">
+    <div className="flex justify-between items-center p-5 absolute top-0 w-full z-20">
       <div className="flex items-center md:gap-8 gap-4">
         <img src={logo} alt="Logo" className="md:w-[120px] w-[90px] mr-4" />
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {menu.map((item, index) => (
             <HeaderItem key={index} name={item.name} Icon={item.icon} />
           ))}
         </div>
-        <div className="flex items-center md:gap-8 gap-4 md:hidden">
+        <div className="flex items-center md:gap-8 gap-4 lg:hidden">
           {menu.map(
             (item, index) =>
               index < 3 && <HeaderItem key={index} name={""} Icon={item.icon} />
           )}
         </div>
-        <div className="md:hidden" onClick={() => setToggle(!toggle)}>
+        <div className="lg:hidden" onClick={() => setToggle(!toggle)}>
           <HeaderItem name={""} Icon={HiDotsVertical} />
           {toggle && (
             <div
               className="absolute mt-3 bg-[#121212]
-              border-[1px] border-gray-700 p-3 px-5 py-4"
+              border-[1px] border-gray-700 p-3 px-5 py-4
+              z-10 sm:ml-[-10px]"
             >
               {menu.map(
                 (item, index) =>

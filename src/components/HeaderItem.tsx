@@ -10,7 +10,8 @@ function HeaderItem({ name, Icon }: HeaderItemProps) {
     <div
       className="text-white flex items-center gap-3
     text-[15px] font-semibold cursor-pointer 
-    hover:underline underline-offset-8 mb-2"
+    hover:underline underline-offset-8 mb-2
+    opacity-80"
     >
       <Icon />
       <h2>{name}</h2>
