@@ -7,6 +7,7 @@ function Home() {
   return (
     <div>
       <Slider />
+      <ProductionHouse />
       <Movies />
     </div>
   );

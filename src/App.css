@@ -37,3 +37,28 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Default background */
+.gradient-bg {
+  background: linear-gradient(
+    to top, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.8) 50%, 
+    rgba(0, 0, 0, 0.8) 60%, 
+    rgba(0, 0, 0, 0.9) 70%, 
+    rgba(0, 0, 0, 0.2) 80%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Background for small screens */
+@media (max-width: 768px) {
+  .sm-gradient-bg {
+    background: linear-gradient(
+      to top, 
+      rgba(0, 0, 0, 0.3) 0%, 
+      rgba(0, 0, 0, 0.5) 90%, 
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+}

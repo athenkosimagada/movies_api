@@ -12,10 +12,11 @@ function MovieItem({ name, pic }: MovieItemProps) {
   };
 
   const handleMouseLeave = () => {
-    setOpacity(0.3);
+    setOpacity(0);
   };
   return (
-    <div className="flex flex-1 relative rounded-[5px] overflow-hidden">
+    <div className="flex-1 relative rounded-[5px] 
+    overflow-hidden border-[1px] border-[#55a0c1]">
       <div
         className="absolute inset-0 z-10 cursor-pointer"
         style={{
