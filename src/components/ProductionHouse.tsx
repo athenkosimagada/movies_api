@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import GlobalApi from "../assets/services/GlobalApi";
 import { HiFire } from "react-icons/hi";
 import { IoCaretBack, IoCaretForward } from "react-icons/io5";
@@ -150,7 +150,7 @@ function ProductionHouse() {
           <div
             key={index}
             className={`flex-1 bg-[#55a0c1] h-[2px] ${
-              index <= end ? "opacity-90" : "opacity-20"
+              index <= end && item ? "opacity-90" : "opacity-20"
             }`}
           ></div>
         ))}
