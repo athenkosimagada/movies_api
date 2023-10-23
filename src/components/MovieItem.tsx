@@ -29,7 +29,7 @@ function MovieItem({ name, pic }: MovieItemProps) {
         onMouseLeave={handleMouseLeave}
       ></div>
       <div className="absolute bottom-0 left-0 p-4">
-        <h2>{name}</h2>
+      <h2 style={{ textShadow: '2px 2px 2px rgba(0, 0, 0, 0.7)' }}>{name}</h2>
       </div>
       <img src={pic} alt={name} className="w-full aspect-[16/9] h-auto" />
     </div>
