@@ -78,7 +78,7 @@ function Slider() {
             <div className="absolute inset-0 z-10 lg-slider"></div>
             <img
               className="w-full h-full object-cover 
-              object-left-top"
+              object-left-top min-h-[400px]"
               src={IMAGE_BASE_URL + item.backdrop_path}
               alt={item.name != null ? item.name : item.title}
             />
@@ -90,17 +90,24 @@ function Slider() {
               <div className="flex flex-col gap-2">
                 <h2
                   className="text-white font-bold lg:text-4xl 
-                text-2xl opacity-80 md:text-start text-center"
+                md:text-2xl opacity-80 md:text-start text-center"
                 >
                   {item.name != null ? item.name : item.title}
                 </h2>
                 <div className="flex md:justify-start justify-center gap-4">
                   <div className="flex md:justify-start justify-center items-center">
+                    <p>
+                      {item.release_date
+                        ? item.release_date.substring(0, 4)
+                        : item.first_air_date.substring(0, 4)}
+                    </p>
+                  </div>
+                  <div className={`flex md:justify-start justify-center items-center 
+                  ${item.vote_average >= 8 && `text-green-700`}
+                  ${item.vote_average < 8 && item.vote_average >= 5 && `text-orange-400`}
+                  ${item.vote_average < 5 && `text-red-600`}`}>
                     <HiStar />
                     <p>{item.vote_average.toFixed(2)}</p>
-                  </div>
-                  <div className="flex md:justify-start justify-center items-center">
-                    <p>{item.release_date ? item.release_date : item.first_air_date}</p>
                   </div>
                 </div>
                 <p className="hidden lg:flex text-sm opacity-60 md:w-[80%] lg:w-[60%]">

@@ -19,8 +19,18 @@ interface Movie {
 }
 
 function ProductionHouse() {
+  const handleResize = () => {
+    let numMovies = 3;
+    if (window.innerWidth <= 1024 && window.innerWidth > 320) {
+      numMovies = 2;
+    } else if (window.innerWidth <= 320) {
+      numMovies = 1;
+    }
+    return numMovies;
+  };
+
   const [movieList, setMovieList] = useState<Movie[]>([]);
-  const [slidesPerView, setSlidesPerView] = useState<number>(3);
+  const [slidesPerView, setSlidesPerView] = useState<number>(handleResize());
   const nextElRef = useRef<HTMLDivElement | null>(null);
   const prevElRef = useRef<HTMLDivElement | null>(null);
   const swiperRef = useRef<SwiperCore | null>(null);
@@ -30,24 +40,8 @@ function ProductionHouse() {
 
   useEffect(() => {
     getTreddingVideos();
-
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setSlidesPerView(1);
-      } else if (window.innerWidth < 1024) {
-        setSlidesPerView(2);
-      } else {
-        setSlidesPerView(3);
-      }
-    };
-
     const activeIndex = swiperRef.current?.activeIndex;
     setStart(activeIndex as number);
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
   useEffect(() => {
@@ -55,6 +49,10 @@ function ProductionHouse() {
       swiperRef.current.update();
     }
   }, [slidesPerView]);
+
+  window.addEventListener("resize", () => {
+    setSlidesPerView(handleResize());
+  });
 
   const getTreddingVideos = () => {
     GlobalApi.getTreddingVideos.then((respond) => {
@@ -80,7 +78,7 @@ function ProductionHouse() {
 
   return (
     <div className="flex flex-col py-2 gap-8 relative 
-    md:top-[-100px] z-20 gradient-bg sm-gradient-bg
+    md:top-[-100px] z-10 gradient-bg sm-gradient-bg
     md:bg-transparent bg-black">
       <h2 className="flex justify-center items-center gap-2 font-bold">
         <HiFire /> <span>Treding Now</span> <HiFire />
@@ -149,7 +147,7 @@ function ProductionHouse() {
         {movieList.map((item, index) => (
           <div
             key={index}
-            className={`flex-1 bg-[#55a0c1] h-[2px] ${
+            className={`flex-1 m-0 bg-[#55a0c1] h-[2px] ${
               index <= end && item ? "opacity-90" : "opacity-20"
             }`}
           ></div>
