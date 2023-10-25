@@ -1,7 +1,7 @@
 import Header from "./containers/Header";
 import "./App.css";
 import Home from "./pages/Home";
-import { ReactElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
