@@ -1,5 +1,12 @@
 #root {
   overflow-x: hidden;
+  background: linear-gradient(
+    to top, 
+    rgba(0, 0, 0, 0.9) 0%, 
+    rgba(0, 0, 0, 0.7) 60%, 
+    rgba(0, 0, 0, 0.7) 90%, 
+    rgba(0, 0, 0, 0.9) 100%
+  );
 }
 
 .logo {
@@ -78,17 +85,26 @@
   }
 
   .lg-slider {
-    background: linear-gradient(
-      to bottom, rgba(0, 0, 0, 0.2) 0%,
+    background: 
+      linear-gradient(
+         to bottom, 
+       rgba(0, 0, 0, 0.2) 0%,
        rgba(0, 0, 0, 0.2) 50%, 
        rgba(0, 0, 0, 0.3) 60%, 
        rgba(0, 0, 0, 1) 80%, 
        rgba(0, 0, 0, 1) 100%),
-       linear-gradient(to left, 
+       linear-gradient(
+         to left, 
        rgba(0, 0, 0, 0.2) 0%, 
        rgba(0, 0, 0, 0.2) 50%, 
        rgba(0, 0, 0, 0.4) 60%, 
-       rgba(0, 0, 0, 0.8) 100%);
+       rgba(0, 0, 0, 0.8) 100%),
+       linear-gradient(
+         to right, 
+       rgb(0, 0, 0, 0) 0%, 
+       rgb(0, 0, 0,0) 50%, 
+       rgb(0, 0, 0,1) 60%, 
+       rgb(0, 0, 0,1) 100%);
   }
 }
 

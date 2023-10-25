@@ -20,8 +20,7 @@ function Slider() {
   const swiperRef = useRef<SwiperCore | null>(null);
 
   useEffect(() => {
-    getTreddingVideos();
-    console.log(movieList);
+    getPlayingNowVideos();
   }, []);
 
   interface Movie {
@@ -35,8 +34,8 @@ function Slider() {
     // Add other properties as needed
   }
 
-  const getTreddingVideos = () => {
-    GlobalApi.getTreddingVideos.then((respond) => {
+  const getPlayingNowVideos = () => {
+    GlobalApi.getPlayingNowVideos.then((respond) => {
       setMovieList(respond.data.results);
     });
   };

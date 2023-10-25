@@ -15,7 +15,6 @@ interface Movie {
   name: string;
   title: string;
   overview: string;
-  // Add other properties as needed
 }
 
 function ProductionHouse() {

@@ -31,7 +31,7 @@ function Header() {
   ];
 
   return (
-    <div className="flex justify-between items-center p-5 absolute top-0 w-full max-w-[1220px] mx-auto z-20">
+    <div className="flex justify-between items-center p-5 absolute top-0 w-full max-w-[1520px] mx-auto z-20">
       <div className="flex items-center md:gap-8 gap-4">
         <img src={logo} alt="Logo" className="md:w-[120px] w-[80px] mr-4" />
         <div className="hidden lg:flex items-center gap-8">
