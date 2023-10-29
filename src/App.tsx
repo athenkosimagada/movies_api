@@ -1,34 +1,24 @@
-import Header from "./containers/Header";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import { useEffect, useState } from "react";
+import MoviesShows from "./pages/MoviesShows";
+import Subscriptions from "./pages/Subscriptions";
+import Support from "./pages/Support";
+import NoPage from "./pages/NoPage";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => {
-      clearTimeout(loadingTimeout);
-    };
-  }, []);
-
   return (
-    <div className="max-w-[1520px] mx-auto">
-      {isLoading ? (
-        <div className="flex justify-center items-center min-h-screen">
-          <div className="loader"></div>
-        </div>
-      ) : (
-        <>
-          <Header />
-          <Home />
-        </>
-      )}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/movies&shows" element={<MoviesShows />} />
+          <Route path="/subscriptions" element={<Subscriptions />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

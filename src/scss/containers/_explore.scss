@@ -1,0 +1,16 @@
+.explore {
+    @include padding;
+    padding: 5em;
+
+    @include flex($justify: start, $align: start, $direction: column);
+    gap: 3em;
+}
+
+.explore-content {
+    @include flex($justify: start, $align: start, $direction: column);
+    gap: 1em;
+}
+
+.explore-content p {
+    opacity: 0.6;
+}

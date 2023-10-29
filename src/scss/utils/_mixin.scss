@@ -1,0 +1,15 @@
+@mixin flex($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin link() {
+    text-decoration: none;
+    color: unset;
+}
+
+@mixin padding() {
+    padding: 0.5em 5%;
+}

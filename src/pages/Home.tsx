@@ -1,15 +1,14 @@
-import Slider from "../components/Slider";
-import ProductionHouse from "../components/ProductionHouse";
-import Movies from "../containers/Movies";
+import React from 'react'
+import Header from '../containers/Header'
+import Explore from '../containers/Explore'
 
 function Home() {
   return (
     <div>
-      <Slider />
-      <ProductionHouse />
-      <Movies />
+      <Header />
+      <Explore />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

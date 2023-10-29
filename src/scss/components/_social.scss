@@ -1,0 +1,14 @@
+.social {
+    @include flex($direction: column);
+    color: $primary-clr-800;
+    cursor: pointer;
+    &:hover {
+        color: $primary-clr-300;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .social {
+        font-size: smaller;
+    }
+}
