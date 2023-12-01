@@ -36,8 +36,7 @@ function Explore() {
         <Swiper
           navigation={{
             nextEl: '.swiper-button__next',
-            prevEl: '.swiper-button__prev',
-            clickable: true,
+            prevEl: '.swiper-button__prev'
           }}
           grid={{
             rows: 1,
