@@ -4,13 +4,68 @@
 
     @include flex($justify: start, $align: start, $direction: column);
     gap: 3em;
+
+    @media screen and (max-width: 1280px) {
+      padding: 0 10%;
+  }
+
+  @media screen and (max-width: 878px) {
+      padding: 0 5%;
+  }
 }
 
 .explore-content {
     @include flex($justify: start, $align: start, $direction: column);
     gap: 1em;
 }
+.explore-content h2 {
+  font-size: 2.275em;
+  font-weight: bold;
+}
 
 .explore-content p {
+  font-size: 1.125em;
     opacity: 0.6;
+}
+
+.explore__container {
+  width: 100%;
+  @include flex($justify: space-between, $align: end, $direction: flex);
+  gap: 5em;
+}
+
+.explore__controler {
+  @include flex($justify: center, $align: center, $direction: flex);
+  gap: 1.5em;
+  background-color: $dark-clr-800;
+  border: 2px solid $dark-clr-600;
+  border-radius: 4px;
+  padding: 0.5em;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.slider__arrow {
+  @include flex($justify: center, $align: center, $direction: flex);
+  background-color: $dark-clr-600;
+  border-radius: 4px;
+  padding: 0.5em 0.7em;
+  cursor: pointer;
+}
+
+.explore-type {
+  width: 100%;
+}
+
+.swiper__pagination {
+  display: flex;
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 4px;
+    background-color: $primary-clr-800;
+    border-radius: 4px;
+  }
 }

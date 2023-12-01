@@ -3,14 +3,22 @@
 @import '../utils/variables';
 @import '../utils/mixin';
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
 }
 
 html {
-    scroll-behavior: smooth;
+  font-size: 72.5%;
+  scroll-behavior: smooth;
 }
 
 .layout {
@@ -39,4 +47,9 @@ html {
 
 a {
     @include link;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
 }

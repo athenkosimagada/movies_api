@@ -31,10 +31,9 @@ function Navbar() {
 
   function handleClick() {
     setToggle(!toggle);
-    console.log("worked");
   }
   return (
-    <div className="navbar">
+    <div className="container navbar">
       <Link to="/">
         {width <= 414 && (
           <img className="logo" src={images.mobile} alt="Logo" />

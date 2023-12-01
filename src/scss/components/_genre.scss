@@ -1,0 +1,25 @@
+.genre {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 2em;
+    background-color: $dark-clr-600;
+    border-radius: 4px;
+    aspect-ratio: 9/10;
+    cursor: pointer;
+}
+
+.genre:hover {
+    transition: all 0.3s ease-in;
+    background-color: $dark-clr-400;
+}
+
+.genre img {
+    max-width: 100%;
+}
+
+.genre-title {
+    @include flex($justify: space-between, $align: center, $direction: flex);
+    font-size: 1.25em;
+}

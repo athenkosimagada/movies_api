@@ -11,7 +11,7 @@ function Header() {
     setWidth(getWidth());
   });
   return (
-    <div className="hero">
+    <div className="container hero">
       <div className="content">
         <h1>The Best Straming Experience</h1>
         <p>
