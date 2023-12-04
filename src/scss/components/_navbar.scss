@@ -1,12 +1,20 @@
 .navbar {
     @include flex($justify: space-between);
-    @include padding;
+    padding: 2em 5% 0 5%;
     background: transparent;
 
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+
+    @media screen and (max-width: 1280px) {
+        padding: 2rem 8%  0  8%;
+    }
+
+    @media screen and (max-width: 878px) {
+        padding: 2rem 2.5%  0  2.5%;
+    }
 }
 
 .nav {
@@ -56,9 +64,9 @@
     position: absolute;
     inset: 0;
     background-color: $dark-clr-600;
-    @include padding;
-    min-height: 100dvh;
-    z-index: 2;
+    padding: 2em 5% 0 5%;
+
+    z-index: 999;
 }
 
 .navigation-socials {
