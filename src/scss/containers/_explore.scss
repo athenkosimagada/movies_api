@@ -1,20 +1,20 @@
 .explore {
     position: relative;
-    padding: 8% 5% 0 5%;
+    padding: 8% 5% 4rem 5%;
 
     @include flex($justify: start, $align: start, $direction: column);
     gap: 3em;
 
     @media screen and (max-width: 1280px) {
-      padding: 8% 8% 0 8%;
+      padding: 8% 8% 4rem 8%;
   }
 
   @media screen and (max-width: 878px) {
-    padding: 8% 2.5% 0 2.5%;
+    padding: 8% 2.5% 4rem 2.5%;
   }
 
   @media screen and (max-width: 768px) {
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -48,7 +48,7 @@
 
   @media screen and (max-width: 768px) {
     position: absolute;
-    bottom: 0;
+    bottom: 1.2rem;
     left: 0;
     right: 0;
     z-index: 2;

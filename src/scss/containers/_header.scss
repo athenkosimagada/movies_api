@@ -7,18 +7,18 @@
 }
 
 .content {
-    padding: 250px 8%  0  8%;
+    padding: 450px 8%  0  8%;
     
     @include flex($direction: column);
     text-align: center;
     gap: 1.5em;
 
     background: linear-gradient(to bottom,
-    rgba(0,0,0,0.1) 10%,
-    rgba(0,0,0,0.2) 20%,
-    rgba(0,0,0,0.4) 50%,
-    rgba(0,0,0,0.6) 70%,
-    rgba(0,0,0,0.8) 100%
+    rgba(15, 15, 15, 0.1) 10%,
+    rgba(15, 15, 15, 0.2) 20%,
+    rgba(15, 15, 15, 0.4) 50%,
+    rgba(15, 15, 15, 0.6) 70%,
+    rgba(15, 15, 15, 0.8) 100%
     );
 
     @media screen and (max-width: 1280px) {
