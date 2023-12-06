@@ -19,18 +19,18 @@
 }
 
 .explore-content {
-    @include flex($justify: start, $align: start, $direction: column);
-    gap: 1em;
-}
-.explore-content h2 {
-  font-size: 2.275em;
-  font-weight: bold;
-}
-
-.explore-content p {
-  font-size: 1.125em;
-    opacity: 0.6;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 0.875em;
+  h2 {
+    font-size: 38px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: $grey-clr-800;
+  }
+} 
 
 .explore__container {
   width: 100%;
