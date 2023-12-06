@@ -70,7 +70,7 @@ function Explore() {
           grid={{
             rows: 1,
           }}
-          spaceBetween={10}
+          spaceBetween={3}
           pagination={{
             el: ".swiper__pagination",
             clickable: true,
