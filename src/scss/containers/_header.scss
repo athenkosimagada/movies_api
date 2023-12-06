@@ -4,11 +4,19 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    padding: 500px 5%  0  5%;
+
+    @media screen and (max-width: 1280px) {
+        padding: 500px 8%  0  8%;
+    }
+
+    @media screen and (max-width: 878px) {
+        padding: 500px 2.5%  0  2.5%;
+    }
 }
 
 .content {
-    padding: 450px 8%  0  8%;
-    
     @include flex($direction: column);
     text-align: center;
     gap: 1.5em;
@@ -21,33 +29,24 @@
     rgba(15, 15, 15, 0.8) 100%
     );
 
-    @media screen and (max-width: 1280px) {
-        padding: 250px 8%  0  8%;
+    h1 {
+        font-size: 58px;
+    
+        @media screen and (max-width: 1280px) {
+            font-size: 48px;
+        }
+    
+        @media screen and (max-width: 878px) {
+            font-size: 28px;
+        }
     }
-
-    @media screen and (max-width: 878px) {
-        padding: 250px 2.5%  0  2.5%;
-    }
-}
-
-.content h1 {
-    font-size: 58px;
-
-    @media screen and (max-width: 1280px) {
-        font-size: 48px;
-    }
-
-    @media screen and (max-width: 878px) {
-        font-size: 28px;
-    }
-}
-
-.content p {
-    font-size: 18px;
-    color: $grey-clr-800;
-
-    @media screen and (max-width: 1280px) {
-        font-size: 14px;
+    p {
+        font-size: 18px;
+        color: $grey-clr-800;
+    
+        @media screen and (max-width: 1280px) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -55,9 +54,9 @@
     background-color: $primary-clr-800;
     padding: 0.8em 1.2em;
     border-radius: 8px;
-}
 
-.btn-watch a {
-    @include flex;
-    gap: 0.5em;
+    a {
+        @include flex;
+        gap: 0.5em;
+    }
 }
