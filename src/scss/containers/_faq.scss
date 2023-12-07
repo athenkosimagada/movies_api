@@ -1,4 +1,4 @@
-.devices {
+.faq {
     position: relative;
     padding: 0 5% 2rem 5%;
 
@@ -14,30 +14,35 @@
   }
 }
 
-.devices-content {
+.faq__container {
+    @include flex($justify: space-between, $align: end);
+    flex-wrap: wrap;
+    gap: 1.25em;
+    width: 100%;
+}
+
+.faq-content {
     display: flex;
     flex-direction: column;
     gap: 0.875em;
     h2 {
-      font-size: 2.275em;
+      font-size: 2.375rem;
     }
     
     p {
-      font-size: 1.125em;
+      font-size: 1.125rem;
       color: $grey-clr-800;
     }
 }
 
-.devices-types {
+.faq-questions {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    width: 100%;
 
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
+    @media screen and (max-width: 460px) {
+      grid-template-columns: 1fr;
     }
-
-    @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
-    }
-}
+  }
+  

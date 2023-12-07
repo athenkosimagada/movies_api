@@ -1,6 +1,7 @@
 import Header from '../containers/Header'
 import Explore from '../containers/Explore'
 import Devices from '../containers/Devices'
+import FAQ from '../containers/FAQ'
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Header />
       <Explore />
       <Devices />
+      <FAQ />
     </div>
   )
 }

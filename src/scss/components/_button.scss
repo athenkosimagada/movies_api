@@ -1,0 +1,14 @@
+button {
+    border: none;
+    background-color: $primary-clr-800;
+    border-radius: 8px;
+
+    padding: 1.125em 1.5em;
+    font-size: 1.125em;
+    font-weight: $font-regular;
+
+    min-width: max-content;
+    color: $absolute-white;
+
+    cursor: pointer;
+}
