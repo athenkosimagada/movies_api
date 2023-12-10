@@ -19,9 +19,10 @@
 }
 
 .explore-content {
-  display: flex;
+    display: flex;
     flex-direction: column;
     gap: 0.875em;
+    padding-top: 5rem;
     h2 {
       font-size: 2.275em;
     }

@@ -1,0 +1,74 @@
+.pricing {
+    position: relative;
+    padding: 0 5%;
+
+    @include flex($justify: start, $align: start, $direction: column);
+    gap: 3em;
+
+    @media screen and (max-width: 1280px) {
+      padding: 0 8%;
+  }
+
+  @media screen and (max-width: 878px) {
+    padding: 0 2.5%;
+  }
+}
+
+.pricing-container {
+    @include flex($justify: space-between, $align: end);
+    width: 100%;
+    gap: 1.25em;
+    flex-wrap: wrap;
+    .pricing-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875em;
+        padding-top: 5rem;
+        h2 {
+          font-size: 2.375em;
+        }
+        
+        p {
+          font-size: 1.125em;
+          color: $grey-clr-800;
+        }
+    }
+
+    .pricing-type {
+        list-style: none;
+        @include flex;
+
+        background-color: $dark-clr-800;
+        border: 2px solid rgba(51, 51, 51);
+        border-radius: 8px;
+        padding: 0.5em;
+
+        button {
+            color: $grey-clr-500;
+            background-color: transparent;
+            padding: 0.875em 1.5em;
+            border: none;
+            cursor: pointer;
+        }
+
+        button.active {
+            background-color: $dark-clr-400;
+            border-radius: 8px;
+        }
+    }
+}
+
+.pricing-plans {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+
+    @media screen and (max-width: 1080px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}

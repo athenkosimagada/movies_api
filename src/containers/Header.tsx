@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { FaPlay } from "react-icons/fa6";
+import NewDocButton from "../components/NewDocButton";
 function Header() {
   const [width, setWidth] = useState<number>(getWidth());
   function getWidth(): number {
@@ -26,12 +26,8 @@ function Header() {
             </span>
           )}
         </p>
-        <div className="btn-watch">
-          <Link to="/">
-            <FaPlay />
-            <span>Start Watching Now</span>
-          </Link>
-        </div>
+
+        <NewDocButton className="btn-primary" buttonName="Start Watching Now" buttonIcon={<FaPlay />} />
       </div>
     </div>
   );

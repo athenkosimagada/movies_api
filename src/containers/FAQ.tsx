@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import Button from "../components/NewDocButton";
 import Question from "../components/Question";
 
 function FAQ() {
@@ -12,7 +12,7 @@ function FAQ() {
             answers to the most common questions about StreamVibe.
           </p>
         </div>
-        <Button />
+        <Button className="btn-primary" buttonName="Ask Question" />
       </div>
       <div className="faq-questions">
         <Question />

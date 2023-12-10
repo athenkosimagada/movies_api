@@ -1,14 +1,21 @@
 button {
+    display: flex;
+    gap: 0.5em;
+    border-radius: 8px;
+    padding: 1em 1.25em;
+    font-size: 1em;
+    color: $absolute-white;
+    cursor: pointer;
+}
+
+.btn-primary {
     border: none;
     background-color: $primary-clr-800;
-    border-radius: 8px;
+    font-weight: $font-regular; 
+}
 
-    padding: 1.125em 1.5em;
-    font-size: 1.125em;
-    font-weight: $font-regular;
-
-    min-width: max-content;
-    color: $absolute-white;
-
-    cursor: pointer;
+.btn-dark {
+    border: 1px solid $dark-clr-200;
+    background-color: $dark-clr-500;
+    font-weight: $font-regular; 
 }

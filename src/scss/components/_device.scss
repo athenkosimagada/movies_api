@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 1.875rem;
-
+    cursor: pointer;
 
     border: 1px solid $dark-clr-500;
     border-radius: 12px;
@@ -12,6 +12,14 @@
     p {
         font-size: 1.125em;
         color: $grey-clr-800;
+    }
+
+    @media screen and (max-width: 1200px) {
+        padding: calc(3.125rem - 0.25 * 3.125rem);
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: calc(3.125rem - 0.45 * 3.125rem);
     }
 }
 
@@ -53,6 +61,28 @@
         height: 100%;
         border-radius: inherit;
         box-shadow: 0 0 2px 1px rgba(51, 51, 51);
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 66px;
+        height: 66px;
+
+        svg {
+            width: 35px;
+            height: 35px;
+            color: $primary-clr-800;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 58px;
+        height: 58px;
+
+        svg {
+            width: 30px;
+            height: 30px;
+            color: $primary-clr-800;
+        }
     }
 }
 

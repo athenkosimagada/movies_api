@@ -1,0 +1,45 @@
+.plan {
+    flex: 1;
+    display: grid;
+    grid-auto-columns: auto 1fr auto;
+    gap: 3.125rem;
+    cursor: pointer;
+
+    border: 1px solid $dark-clr-500;
+    border-radius: 12px;
+
+    padding: 3.125rem;
+
+
+    .plan-content {
+        @include flex($justify: start, $align: start, $direction: column);
+        gap: 1rem;
+        h3 {
+            font-size: 1.5rem;
+            font-weight: $font-bold;
+        }
+    }
+
+    .plan-btns {
+        flex-wrap: wrap;
+        @include flex($justify: space-between, $align: center);
+        gap: 1.25rem;
+
+        > * {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    p {
+        color: $grey-clr-800;
+    }
+
+    > p {
+        span {
+            font-size: 2.5rem;
+            font-weight: $font-semibold;
+            color: $absolute-white;
+        }
+    }
+}
