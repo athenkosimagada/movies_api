@@ -1,5 +1,4 @@
 .explore {
-    position: relative;
     @include flex($justify: start, $align: start, $direction: column);
     gap: 3em;
 

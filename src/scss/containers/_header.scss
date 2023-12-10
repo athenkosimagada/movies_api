@@ -1,10 +1,21 @@
-.hero {
-    min-height: max-content;
-    background-image: url('./../assets/images/hero.png');
+.header {
+    background: 
+    linear-gradient(to bottom,
+    rgba(15, 15, 15, 0.9) 0%,
+    rgba(15, 15, 15, 0.8) 20%,
+    rgba(15, 15, 15, 0.7) 30%,
+    rgba(15, 15, 15, 0.6) 50%,
+    rgba(15, 15, 15, 0.7) 60%,
+    rgba(15, 15, 15, 0.8) 65%,
+    rgba(15, 15, 15, 1) 100%
+    ),
+    url('./../assets/images/hero-2.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+}
 
+.hero {
     padding: 500px 5%  0  5%;
 
     @media screen and (max-width: 1280px) {
@@ -20,14 +31,6 @@
     @include flex($direction: column);
     text-align: center;
     gap: 1.5em;
-
-    background: linear-gradient(to bottom,
-    rgba(15, 15, 15, 0.1) 10%,
-    rgba(15, 15, 15, 0.2) 20%,
-    rgba(15, 15, 15, 0.4) 50%,
-    rgba(15, 15, 15, 0.6) 70%,
-    rgba(15, 15, 15, 0.8) 100%
-    );
 
     h1 {
         font-size: 3.625em;
