@@ -1,17 +1,7 @@
 .pricing {
     position: relative;
-    padding: 0 5%;
-
     @include flex($justify: start, $align: start, $direction: column);
     gap: 3em;
-
-    @media screen and (max-width: 1280px) {
-      padding: 0 8%;
-  }
-
-  @media screen and (max-width: 878px) {
-    padding: 0 2.5%;
-  }
 }
 
 .pricing-container {

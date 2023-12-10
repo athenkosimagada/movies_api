@@ -61,3 +61,16 @@ a {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+.body-container {
+    overflow: hidden;
+    margin: 0 5%;
+
+    @media screen and (max-width: 1280px) {
+        margin: 0 8%;
+    }
+
+    @media screen and (max-width: 878px) {
+        margin: 0 2.5%;
+    }
+}

@@ -1,0 +1,69 @@
+
+.banner {
+    border-radius: 8px;
+    padding: 6.25em 4em;
+    margin: 4.5rem auto;
+
+    background: linear-gradient(to right, 
+    rgba(15, 15, 15, 1) 10%, 
+    rgba(20, 15, 15, 0.9747) 20%, 
+    rgba(34, 14, 14, 0.9096) 60%, 
+    rgba(229, 0, 0, 0.5)),
+                url('/src/assets/images/bg-banner.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include flex($justify: space-between);
+    flex-wrap: wrap;
+    gap: 1.25em;
+
+
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .banner-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875em;
+
+        h2 {
+          font-size: 2.375rem;
+        }
+        
+        p {
+          font-size: 1.125rem;
+          color: $grey-clr-800;
+        }
+    }
+    
+
+    @media screen and (max-width: 1280px) {
+        padding: 4.25em 3em;
+    }
+
+    @media screen and (max-width: 878px) {
+        padding: 3.5em 2em;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 3.25em 1.5em;
+
+        background: linear-gradient(to bottom, 
+        rgba(15, 15, 15, 1) 10%, 
+        rgba(20, 15, 15, 0.9747) 20%, 
+        rgba(34, 14, 14, 0.9096) 60%, 
+        rgba(229, 0, 0, 0.5)),
+        url('/src/assets/images/bg-banner.png');
+    }
+}
