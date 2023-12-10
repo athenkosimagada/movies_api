@@ -16,20 +16,7 @@
     @include flex($justify: space-between);
     flex-wrap: wrap;
     gap: 1.25em;
-
-
-    position: relative;
-    z-index: 1;
-
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.8);
-    }
+    border: 1px solid $dark-clr-200;
 
     .banner-content {
         display: flex;

@@ -74,21 +74,11 @@
 
             transition: all 0.3s ease;
 
-            &::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: inherit;
-                box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.8);
-                /* animation: glow 1.5s infinite alternate; */
-            }
+            border: 1px solid $dark-clr-200;
 
             &:hover {
                 color: $primary-clr-500;
-                &::before {
-                    box-shadow: 0 0 5px 1px rgba(255, 51, 51, 0.8);
-                }
+                border: 1px solid $primary-clr-500;
             }
 
             > * {
