@@ -4,6 +4,10 @@
 
 .footer-container {
     padding: 0 5%;
+    
+    @media screen and (min-width: 1440px) {
+        padding: 0;
+    }
 
     @media screen and (max-width: 1280px) {
       padding: 0 8%;
