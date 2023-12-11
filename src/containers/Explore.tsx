@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Grid, Pagination, Navigation } from "swiper/modules";
+import {Navigation } from "swiper/modules";
 import Genre from "../components/Genre";
 import { useEffect, useState } from "react";
 import { BASE_URL, API_KEY } from "../constants/api";
@@ -17,7 +17,6 @@ interface GenreItem {
 }
 
 function Explore() {
-  const [IsMobile, setIsMobile] = useState<Boolean>(window.innerWidth < 768);
   const [loading, setLoading] = useState(true);
   const data = useFetch<GenreItem[]>(
     BASE_URL + "/genre/tv/list?api_key=" + API_KEY,
@@ -25,21 +24,8 @@ function Explore() {
   );
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
     if (data.length > 0) {
       setLoading(false);
-      console.log(data)
     }
   }, [data]);
 
@@ -88,12 +74,14 @@ function Explore() {
               nextEl: ".swiper-button__next",
               prevEl: ".swiper-button__prev",
             }}
-            grid={{
-              rows: 1,
-            }}
             spaceBetween={3}
-            modules={[Grid, Pagination, Navigation]}
+            modules={[Navigation]}
             breakpoints={breaks}
+            autoplay={{
+              delay: 100,
+              disableOnInteraction: true,
+            }}
+            loop={true}
             className="genre-swiper"
           >
             {data.map((genre: GenreItem) => (

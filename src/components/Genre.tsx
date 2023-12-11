@@ -1,4 +1,3 @@
-import { HiArrowNarrowRight } from 'react-icons/hi'
 interface GenreProps {
   image?: string
   type?: string
