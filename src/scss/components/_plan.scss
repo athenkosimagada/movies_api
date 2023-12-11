@@ -10,6 +10,12 @@
 
     padding: 3.125rem;
 
+    &:hover {
+        transition: all 0.3s ease-in;
+        border: 1px solid $primary-clr-800;
+        color: $primary-clr-800;
+    }
+
 
     .plan-content {
         @include flex($justify: start, $align: start, $direction: column);

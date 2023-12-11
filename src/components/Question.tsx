@@ -1,26 +1,32 @@
 import { useState } from "react";
 import { HiMinusSm, HiOutlinePlusSm } from "react-icons/hi";
 
-function Question() {
+interface QuestionProps {
+  question: string;
+  answer: string;
+  number?: number;
+}
+
+function Question({question, answer, number}: QuestionProps) {
   const [toggle, setToggle] = useState(false);
 
   function handleToggle() {
     setToggle(!toggle);
   }
+
+  const formattedNumber = number !== undefined ? (number < 10 ? `0${number}` : `${number}`) : '';
+
   return (
     <div className="question">
       <div className="question_number">
-        <span>01</span>
+        <span>{formattedNumber}</span>
       </div>
-      <div className={`question_container ${toggle ? '' : 'center'}`}>
+      <div className={`question_container ${toggle ? "" : "center"}`}>
         <div className="question_content">
-          <h3>What is StreamVibe?</h3>
+          <h3>{question}</h3>
 
           {toggle ? (
-            <p>
-              StreamVibe is a streaming service that allows you to watch movies
-              and shows on demand.
-            </p>
+            <p>{answer}</p>
           ) : null}
         </div>
 

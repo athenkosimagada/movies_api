@@ -1,14 +1,21 @@
 import Button from "./NewDocButton";
 
-function Plan() {
+interface PlanProps {
+  name: string,
+  description: string,
+  price: number,
+  period:string
+}
+
+function Plan({name, description, price, period}: PlanProps) {
   return (
     <div className="plan">
       <div className="plan-content">
-        <h3>Basic Plan</h3>
-        <p>Enjoy an extensive library of movies and shows, featuring a ran</p>
+        <h3>{name}</h3>
+        <p>{description}</p>
       </div>
       <p>
-        <span>$9.99</span>/month
+        <span>${price}</span>/{period}
       </p>
       <div className="plan-btns">
         <Button className="btn-dark" buttonName="Start Free Trial" />

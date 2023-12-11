@@ -1,5 +1,12 @@
 import Button from "../components/NewDocButton";
 import Question from "../components/Question";
+import data from "../constants/data";
+
+interface QuestionProps {
+  question: string;
+  answer: string;
+  number?: number;
+}
 
 function FAQ() {
   return (
@@ -15,15 +22,14 @@ function FAQ() {
         <Button className="btn-primary" buttonName="Ask Question" />
       </div>
       <div className="faq-questions">
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
+      {data.questions.map((question: QuestionProps, index) => (
+          <Question
+            key={index}
+            question={question.question}
+            answer={question.answer}
+            number={index + 1}
+          />
+        ))}
       </div>
     </div>
   );
