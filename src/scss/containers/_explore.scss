@@ -53,6 +53,11 @@
   border-radius: 4px;
   padding: 0.875em 1.875em;
   cursor: pointer;
+
+  &:hover {
+    transition: all 0.3s ease-in;
+    background-color: $dark-clr-200;
+}
 }
 
 .explore-type {
