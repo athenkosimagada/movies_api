@@ -24,7 +24,7 @@
 .explore__container {
   width: 100%;
   @include flex($justify: space-between, $align: end, $direction: flex);
-  gap: 5em;
+  gap: 1.125em;
 }
 
 .explore__controler {
@@ -35,23 +35,15 @@
   border-radius: 4px;
   padding: 0.5em;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1080px) {
     position: absolute;
-    bottom: 1.2rem;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 2;
 
-    border: none;
-    background-color: transparent;
-
-    .slider__arrow {
-      display: none;
-    }
-
-    .swiper__pagination {
-      justify-content: center;
-    }
+    width: fit-content;
+    margin: 0 auto;
   }
 }
 
@@ -59,7 +51,7 @@
   @include flex($justify: center, $align: center, $direction: flex);
   background-color: $dark-clr-600;
   border-radius: 4px;
-  padding: 0.5em 0.7em;
+  padding: 0.875em 1.875em;
   cursor: pointer;
 }
 

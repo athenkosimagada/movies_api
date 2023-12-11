@@ -4,6 +4,7 @@ import mobile from '../assets/images/logo-mobile.png';
 import abstract_design from '../assets/images/abstract-design.png';
 import hero from '../assets/images/hero.png';
 import bg_banner from '../assets/images/bg-banner.png';
+import image_icon from '../assets/images/image-icon.png';
 
 const images = {
     hero,
@@ -11,7 +12,8 @@ const images = {
     desktop,
     laptop,
     mobile,
-    bg_banner
+    bg_banner,
+    image_icon
 }
 
 export default images;

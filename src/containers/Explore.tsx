@@ -1,19 +1,28 @@
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Grid, Pagination, Navigation } from "swiper/modules";
-
 import Genre from "../components/Genre";
 import { useEffect, useState } from "react";
+import { BASE_URL, API_KEY } from "../constants/api";
+import { useFetch } from "../hooks/useFetch";
+import { images } from "../constants";
+
+interface GenreItem {
+  id: number;
+  name: string;
+}
 
 function Explore() {
   const [IsMobile, setIsMobile] = useState<Boolean>(window.innerWidth < 768);
+  const [loading, setLoading] = useState(true);
+  const data = useFetch<GenreItem[]>(
+    BASE_URL + "/genre/tv/list?api_key=" + API_KEY,
+    []
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,20 +36,28 @@ function Explore() {
     };
   }, []);
 
+  useEffect(() => {
+    if (data.length > 0) {
+      setLoading(false);
+      console.log(data)
+    }
+  }, [data]);
+
   const breaks = {
     0: {
-      slidesPerView: 2,
+      slidesPerView: 1,
     },
     480: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     768: {
+      slidesPerView: 3,
+    },
+    1080: {
       slidesPerView: 4,
     },
-    1024: {
-      slidesPerView: 5,
-    },
   };
+
   return (
     <div className="container explore">
       <div className="explore__container">
@@ -51,57 +68,41 @@ function Explore() {
             make you think, or a documentary to learn something new
           </p>
         </div>
-        <div className={`explore__controler ${IsMobile ? 'mobile__pagination' : ''}`}>
-            <div className="swiper-button__prev slider__arrow">
-              <HiArrowNarrowLeft />
-            </div>
-            <div className='swiper__pagination'></div>
-            <div className="swiper-button__next slider__arrow">
-              <HiArrowNarrowRight />
-            </div>
+        <div
+          className='explore__controler'
+        >
+          <div className="swiper-button__prev slider__arrow">
+            <HiArrowNarrowLeft />
           </div>
+          <div className="swiper-button__next slider__arrow">
+            <HiArrowNarrowRight />
+          </div>
+        </div>
       </div>
       <div className="explore-type">
-        <Swiper
-          navigation={{
-            nextEl: ".swiper-button__next",
-            prevEl: ".swiper-button__prev",
-          }}
-          grid={{
-            rows: 1,
-          }}
-          spaceBetween={3}
-          pagination={{
-            el: ".swiper__pagination",
-            clickable: true,
-          }}
-          modules={[Grid, Pagination, Navigation]}
-          breakpoints={breaks}
-          loop={true}
-          className="genre-swiper"
-        >
-          <SwiperSlide>
-            <Genre />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Genre />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Genre />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Genre />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Genre />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Genre />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Genre />
-          </SwiperSlide>
-        </Swiper>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <Swiper
+            navigation={{
+              nextEl: ".swiper-button__next",
+              prevEl: ".swiper-button__prev",
+            }}
+            grid={{
+              rows: 1,
+            }}
+            spaceBetween={3}
+            modules={[Grid, Pagination, Navigation]}
+            breakpoints={breaks}
+            className="genre-swiper"
+          >
+            {data.map((genre: GenreItem) => (
+              <SwiperSlide key={genre.id}>
+                <Genre type={genre.name} image={images.image_icon}/>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
     </div>
   );

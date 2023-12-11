@@ -1,13 +1,14 @@
 import { HiArrowNarrowRight } from 'react-icons/hi'
-import image from '../assets/images/action.png'
-
-function Genre() {
+interface GenreProps {
+  image?: string
+  type?: string
+}
+function Genre({image, type}: GenreProps) {
   return (
     <div className='genre'>
-      <img src={image} alt="" />
+      <img src={image} alt={type} />
       <div className="genre-title">
-      <p>Action</p>
-      <HiArrowNarrowRight />
+      <p>{type}</p>
       </div>
     </div>
   )

@@ -1,28 +1,40 @@
 .genre {
-    display: flex;
-    flex-direction: column;
-
     width: 100%;
-    padding: 2em;
-    background-color: $dark-clr-600;
-    border-radius: 4px;
-    aspect-ratio: 9/10;
-    margin: 1em 0;
+    border: 1px solid $dark-clr-200;
+
+    flex: 1;
+    display: grid;
+    grid-auto-columns: 1fr auto;
+    gap: 3.125rem;
     cursor: pointer;
 
-    border: 1px solid $dark-clr-200;
+    
+    background-color: $dark-clr-600;
+    border-radius: 12px;
+
+    padding: 1.875rem;
+    margin: 1rem 0;
+
+    &:hover {
+        transition: all 0.3s ease-in;
+        border: 1px solid $primary-clr-800;
+        color: $primary-clr-800;
+    }
+
+    img {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .genre-title {
+        @include flex($justify: space-between, $align: center, $direction: flex);
+        font-size: 1em;
+        font-weight: $font-bold;
+    
+        p {
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
 
-.genre:hover {
-    transition: all 0.3s ease-in;
-    background-color: $dark-clr-400;
-}
-
-.genre img {
-    max-width: 100%;
-}
-
-.genre-title {
-    @include flex($justify: space-between, $align: center, $direction: flex);
-    font-size: 1.25em;
-}
