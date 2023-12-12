@@ -12,10 +12,20 @@ button {
     border: none;
     background-color: $primary-clr-800;
     font-weight: $font-regular; 
+
+    &:hover {
+        transition: all 0.3s ease-in;
+        background-color: $primary-clr-500;
+    }
 }
 
 .btn-dark {
     border: 1px solid $dark-clr-200;
     background-color: $dark-clr-500;
-    font-weight: $font-regular; 
+    font-weight: $font-regular;
+    
+    &:hover {
+        transition: all 0.3s ease-in;
+        background-color: $dark-clr-100;
+    }
 }
