@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Plan from "../components/Plan";
-import data from "../constants/data";
+import Plan from "../../components/Plan";
+import data from "../../constants/data";
 
 interface PlanProps {
-  name: string,
-  description: string,
-  price: number,
-  period?:string
+  name: string;
+  description: string;
+  price: number;
+  period?: string;
 }
 
 function Pricing() {
@@ -46,26 +46,26 @@ function Pricing() {
       {toggle === "yearly" ? (
         <div className="pricing-plans">
           {data.yearly.map((plan: PlanProps, index) => (
-          <Plan
-            key={index}
-            name={plan.name}
-            description={plan.description}
-            price={plan.price}
-            period='year'
-          />
-        ))}
+            <Plan
+              key={index}
+              name={plan.name}
+              description={plan.description}
+              price={plan.price}
+              period="year"
+            />
+          ))}
         </div>
       ) : (
         <div className="pricing-plans">
           {data.monthly.map((plan: PlanProps, index) => (
-          <Plan
-            key={index}
-            name={plan.name}
-            description={plan.description}
-            price={plan.price}
-            period='month'
-          />
-        ))}
+            <Plan
+              key={index}
+              name={plan.name}
+              description={plan.description}
+              price={plan.price}
+              period="month"
+            />
+          ))}
         </div>
       )}
     </div>

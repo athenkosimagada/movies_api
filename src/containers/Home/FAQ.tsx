@@ -1,6 +1,6 @@
-import Button from "../components/NewDocButton";
-import Question from "../components/Question";
-import data from "../constants/data";
+import Button from "../../components/NewDocButton";
+import Question from "../../components/Question";
+import data from "../../constants/data";
 
 interface QuestionProps {
   question: string;
@@ -22,7 +22,7 @@ function FAQ() {
         <Button className="btn-primary" buttonName="Ask Question" />
       </div>
       <div className="faq-questions">
-      {data.questions.map((question: QuestionProps, index) => (
+        {data.questions.map((question: QuestionProps, index) => (
           <Question
             key={index}
             question={question.question}

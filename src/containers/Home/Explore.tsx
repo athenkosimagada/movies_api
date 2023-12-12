@@ -4,12 +4,12 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import {Navigation } from "swiper/modules";
-import Genre from "../components/Genre";
+import { Navigation } from "swiper/modules";
+import Genre from "../../components/Genre";
 import { useEffect, useState } from "react";
-import { BASE_URL, API_KEY } from "../constants/api";
-import { useFetch } from "../hooks/useFetch";
-import { images } from "../constants";
+import { BASE_URL, API_KEY } from "../../constants/api";
+import { useFetch } from "../../hooks/useFetch";
+import { images } from "../../constants";
 
 interface GenreItem {
   id: number;
@@ -54,9 +54,7 @@ function Explore() {
             make you think, or a documentary to learn something new
           </p>
         </div>
-        <div
-          className='explore__controler'
-        >
+        <div className="explore__controler">
           <div className="swiper-button__prev slider__arrow">
             <HiArrowNarrowLeft />
           </div>
@@ -86,7 +84,7 @@ function Explore() {
           >
             {data.map((genre: GenreItem) => (
               <SwiperSlide key={genre.id}>
-                <Genre type={genre.name} image={images.image_icon}/>
+                <Genre type={genre.name} image={images.image_icon} />
               </SwiperSlide>
             ))}
           </Swiper>

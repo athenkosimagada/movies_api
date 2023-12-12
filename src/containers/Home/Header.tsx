@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa6";
-import NewDocButton from "../components/NewDocButton";
+import NewDocButton from "../../components/NewDocButton";
 function Header() {
   const [width, setWidth] = useState<number>(getWidth());
   function getWidth(): number {

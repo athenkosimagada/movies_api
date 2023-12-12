@@ -1,9 +1,8 @@
-import Header from "../containers/Header";
-import Explore from "../containers/Explore";
-import Devices from "../containers/Devices";
-import FAQ from "../containers/FAQ";
-import Pricing from "../containers/Pricing";
-import Banner from "../containers/Banner";
+import Header from "../containers/Home/Header";
+import Explore from "../containers/Home/Explore";
+import Devices from "../containers/Home/Devices";
+import FAQ from "../containers/Home/FAQ";
+import Pricing from "../containers/Home/Pricing";
 
 function Home() {
   return (
@@ -14,7 +13,6 @@ function Home() {
         <Devices />
         <FAQ />
         <Pricing />
-        <Banner />
       </div>
     </div>
   );

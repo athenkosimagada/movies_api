@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="footer">
-      <div className="container body-container">
+      <div className="container">
+        <div className="footer-container">
         <div className="footer__nav">
           <div className="footer__page">
             <h3>Home</h3>
@@ -69,6 +70,7 @@ function Footer() {
             <Link to="#">Privacy Policy</Link>
             <Link to="#">Cookie Policy</Link>
           </div>
+        </div>
         </div>
       </div>
     </div>

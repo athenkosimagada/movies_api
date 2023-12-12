@@ -2,9 +2,9 @@ import NewDocButton from "../components/NewDocButton";
 
 function Banner() {
   return (
-    <div className="container">
-      <div className="banner">
-      <div className="banner-content">
+    <div className="body-container">
+      <div className="banner container">
+        <div className="banner-content">
           <h2>Start your free trial today!</h2>
           <p>
             This is a clear and concise call to action that encourages users to
