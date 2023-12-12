@@ -1,6 +1,6 @@
 function NoPage() {
   return (
-    <div>NoPage</div>
+    <div className="container body-container padding_top">NoPage</div>
   )
 }
 

@@ -1,13 +1,17 @@
 .navbar {
     @include flex($justify: space-between);
-    padding: 2em 5% 0 5%;
     background: transparent;
+    padding-top: 2rem;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 999999;
+
+    @media screen and (max-width: 1440px) {
+        padding: 2em 5% 0 5%;
+    }
 
     @media screen and (max-width: 1280px) {
         padding: 2rem 8%  0  8%;

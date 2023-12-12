@@ -1,6 +1,6 @@
 function Support() {
   return (
-    <div>Support</div>
+    <div className="container body-container padding_top">Support</div>
   )
 }
 

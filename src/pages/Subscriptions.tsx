@@ -1,6 +1,6 @@
 function Subscriptions() {
   return (
-    <div>Subscriptions</div>
+    <div className="container body-container padding_top">Subscriptions</div>
   )
 }
 
