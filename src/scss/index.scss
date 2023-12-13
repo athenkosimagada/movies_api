@@ -7,11 +7,20 @@
 @import './components/button';
 @import './components/question';
 @import './components/plan';
+@import './components/movie';
 
-@import './containers/header';
-@import './containers/explore';
-@import './containers/devices';
-@import './containers/faq';
-@import './containers/pricing';
+// Home
+@import './containers/Home/header';
+@import './containers/Home/explore';
+@import './containers/Home/devices';
+@import './containers/Home/faq';
+@import './containers/Home/pricing';
+
+
+
+// Movies And Shows
+@import './containers/MoviesShows/slide';
+
+// Layout
 @import './containers/banner';
 @import './containers/footer';

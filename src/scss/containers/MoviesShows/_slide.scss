@@ -1,0 +1,36 @@
+.slide {
+    position: relative;
+
+    .btn_arrow {
+        cursor: pointer;
+        position: absolute;
+        bottom: 1.25rem;
+        z-index: 10;
+        padding: 0 3.125rem;
+        > * {
+            @include flex;
+            width: 56px;
+            height: 56px;
+            padding: 0.875rem;
+            border: 1px solid $dark-clr-100;
+            border-radius: 8px;
+            background-color: $dark-clr-400;
+        }
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    
+    .slider__arrow1 {
+        left: 1rem;
+    }
+
+    .slider__arrow2 {
+        right: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: small;
+    }
+}

@@ -12,8 +12,8 @@ import { useFetch } from "../../hooks/useFetch";
 import { images } from "../../constants";
 
 interface GenreItem {
-  id: number;
-  name: string;
+  id: number,
+  name: string
 }
 
 function Explore() {
