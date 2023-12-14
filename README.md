@@ -70,4 +70,4 @@ Vite assumes the role of the build tool, ensuring swift and efficient developmen
 ## 🌐 Website visuals
 
 ### Home Page
-![Home Page]([https://github.com/athenkosimagada/movies_api/blob/main/src/assets/images/hero.png](https://github.com/athenkosimagada/movies_api/blob/main/Web%20capture_11-12-2023_205930_localhost.jpeg)https://github.com/athenkosimagada/movies_api/blob/main/Web%20capture_11-12-2023_205930_localhost.jpeg)
+![Home Page](https://github.com/athenkosimagada/movies_api/blob/main/src/assets/images/hero.png](https://github.com/athenkosimagada/movies_api/blob/main/Web%20capture_11-12-2023_205930_localhost.jpeg)https://github.com/athenkosimagada/movies_api/blob/main/Web%20capture_11-12-2023_205930_localhost.jpeg)
