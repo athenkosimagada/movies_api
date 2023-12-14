@@ -39,6 +39,7 @@ export const useFetch = <T,>(url: string, initialState: T) => {
 
   return data;
 };
+```
 
 The `useFetch` hook is an essential part of the project, tailored to fetch data from a specified URL and intelligently manage it based on the structure of the response. Its utilization of TypeScript generics enhances flexibility and ensures a robust data-handling mechanism.
 
