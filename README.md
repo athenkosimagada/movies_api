@@ -62,7 +62,7 @@ Vite assumes the role of the build tool, ensuring swift and efficient developmen
 
 ## Project Benefits
 
-**1. 💡 Enhanced Developer Experience**: TypeScript's features provide superior code navigation, autocompletion, and early error detection.
-**2. 🧩 Modularity and Reusability**: React components facilitate a modular structure.
-**3. 🎨 Efficient Styling**: SCSS enhances the styling process with its features.
-**4. 🚀 Fast Development with Vite**: Vite accelerates the development workflow.
+**1. 💡 Enhanced Developer Experience**: TypeScript's features provide superior code navigation, autocompletion, and early error detection.<br/>
+**2. 🧩 Modularity and Reusability**: React components facilitate a modular structure.<br/>
+**3. 🎨 Efficient Styling**: SCSS enhances the styling process with its features.<br/>
+**4. 🚀 Fast Development with Vite**: Vite accelerates the development workflow.<br/>
