@@ -1,5 +1,6 @@
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";

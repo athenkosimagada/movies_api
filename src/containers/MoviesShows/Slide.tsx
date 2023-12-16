@@ -63,7 +63,7 @@ function Slide() {
             }}
             modules={[Navigation, Pagination, Autoplay]}
             autoplay={{
-              delay: 12000,
+              delay: 12001,
               disableOnInteraction: false,
             }}
             loop={true}
