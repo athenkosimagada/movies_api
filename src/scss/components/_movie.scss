@@ -4,20 +4,53 @@
 
     .movie_content {
         position: absolute;
-        bottom: 6.625rem;
-        left: 0;
-        right: 0;
+        inset: 0;
         z-index: 9;
-
         text-align: center;
-        padding: 0 3.125rem;
+        padding: 0 3.125rem 6.625rem 3.125rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 1.125rem;
+
+        background: linear-gradient(to top,
+        rgba(15, 15, 15, 1) 5%,
+        rgba(15, 15, 15, 0.9) 20%,
+        rgba(15, 15, 15, 0.8) 50%,
+        rgba(15, 15, 15, 0.6) 70%,
+        rgba(15, 15, 15, 0.4) 80%,
+        rgba(15, 15, 15, 0.3) 100%
+        );
+
+        h1 {
+            @media screen and (max-width: 768px) {
+                font-size: 1.875em;
+            }
+        
+            @media screen and (max-width: 340px) {
+                font-size: 1.5em;
+            }
+        }
+
+        p {
+            color: $grey-clr-800;
+        }
+
+        .movie-other {
+            @include flex;
+            gap: 1.125rem;
+        }
+
+        .movie-content__genres {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.125rem;
+        }
 
         @media screen and (max-width: 768px) {
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 0 1.125rem 1.125rem 1.125rem;
             > .overview {
                 display: none;
             }

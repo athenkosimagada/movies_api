@@ -1,11 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.css';
 
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
@@ -44,6 +45,7 @@ function Slide() {
       setLoading(false);
     }
   }, [data]);
+
   return (
     <>
       {loading ? (
@@ -55,17 +57,23 @@ function Slide() {
               nextEl: ".swiper-button__next",
               prevEl: ".swiper-button__prev",
             }}
-            modules={[Navigation]}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+            }}
+            modules={[Navigation, Pagination, Autoplay]}
             autoplay={{
-              delay: 100,
-              disableOnInteraction: true,
+              delay: 99000,
+              disableOnInteraction: false,
             }}
             loop={true}
             className="movie-swiper"
           >
-            {data.map(
+            {data.slice(5, 15).map(
               (item: Item) =>
-                item && item.backdrop_path && (
+                item &&
+                item.genre_ids &&
+                item.backdrop_path && (
                   <SwiperSlide key={item.id}>
                     <Movie
                       title={item.title}
@@ -79,11 +87,14 @@ function Slide() {
                 )
             )}
           </Swiper>
-          <div className="swiper-button__prev slider__arrow1 btn_arrow">
-            <HiArrowNarrowLeft />
-          </div>
-          <div className="swiper-button__next slider__arrow2 btn_arrow">
-            <HiArrowNarrowRight />
+          <div className="pagination">
+            <div className="swiper-button__prev slider__arrow1 btn_arrow">
+              <HiArrowNarrowLeft />
+            </div>
+            <div className="swiper-pagination"></div>
+            <div className="swiper-button__next slider__arrow2 btn_arrow">
+              <HiArrowNarrowRight />
+            </div>
           </div>
         </div>
       )}

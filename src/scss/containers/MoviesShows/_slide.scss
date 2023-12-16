@@ -1,10 +1,23 @@
 .slide {
     position: relative;
+    @media screen and (max-width: 768px) {
+        font-size: small;
+    }
+}
+
+.pagination {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 0;
+    right: 0;
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .btn_arrow {
         cursor: pointer;
-        position: absolute;
-        bottom: 1.25rem;
         z-index: 10;
         padding: 0 3.125rem;
         > * {
@@ -30,7 +43,19 @@
         right: 1rem;
     }
 
+    .swiper-pagination {
+        position: static;
+        @include flex;
+
+        .swiper-pagination-bullet {
+          width: 16px;
+          height: 4px;
+          background-color: $primary-clr-800;
+          border-radius: 4px;
+        }
+    }
+
     @media screen and (max-width: 768px) {
-        font-size: small;
+        display: none;
     }
 }

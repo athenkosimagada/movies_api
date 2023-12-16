@@ -6,6 +6,14 @@ button {
     font-size: 1em;
     color: $absolute-white;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.8em;
+    }
+
+    @media screen and (max-width: 340px) {
+        font-size: 0.7em;
+    }
 }
 
 .btn-primary {

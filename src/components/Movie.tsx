@@ -1,5 +1,8 @@
+import { FaPlay, FaPlus } from "react-icons/fa6";
+import { HiOutlinePlus, HiOutlineThumbUp, HiOutlineVolumeUp } from "react-icons/hi";
 import { API_KEY, BASE_URL } from "../constants/api";
 import { useFetch } from "../hooks/useFetch";
+import NewDocButton from "./NewDocButton";
 
 interface MovieProps {
   genre_ids: number[];
@@ -38,14 +41,25 @@ function Movie({
         <h1>{title}</h1>
         <p className="overview">{overview}</p>
         <div className="movie-other">
-          <p>{vote_average}</p>
-          <p>{release_date}</p>
+          <NewDocButton
+            className="btn-primary"
+            buttonName="Play Now"
+            buttonIcon={<FaPlay />}
+          />
+
+          <NewDocButton
+            className="btn-dark"
+            buttonIcon={<HiOutlinePlus />}
+          />
+          <NewDocButton
+            className="btn-dark"
+            buttonIcon={<HiOutlineThumbUp />}
+          />
+          <NewDocButton
+            className="btn-dark"
+            buttonIcon={<HiOutlineVolumeUp />}
+          />
         </div>
-        {genre_ids.map((id) => (
-          <p key={id}>
-            {genres.find((genre) => genre.id === id)?.name}
-          </p>
-        ))}
       </div>
     </div>
   );
