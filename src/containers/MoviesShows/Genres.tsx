@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import Genre from "../../components/Genre";
 import { useEffect, useState } from "react";
 import { BASE_URL, API_KEY } from "../../constants/api";
@@ -69,11 +69,11 @@ function Genres() {
               prevEl: ".swiper-button_prev",
             }}
             spaceBetween={3}
-            modules={[Navigation]}
             breakpoints={breaks}
+            modules={[Navigation, Autoplay]}
             autoplay={{
-              delay: 100,
-              disableOnInteraction: true,
+              delay: 6000,
+              disableOnInteraction: false,
             }}
             loop={true}
             className="genre-swiper"
