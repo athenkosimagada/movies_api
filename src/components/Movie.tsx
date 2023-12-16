@@ -1,7 +1,10 @@
-import { FaPlay, FaPlus } from "react-icons/fa6";
-import { HiOutlinePlus, HiOutlineThumbUp, HiOutlineVolumeUp } from "react-icons/hi";
-import { API_KEY, BASE_URL } from "../constants/api";
-import { useFetch } from "../hooks/useFetch";
+import { FaPlay } from "react-icons/fa6";
+import {
+  HiOutlinePlus,
+  HiOutlineThumbUp,
+  HiOutlineVolumeUp,
+} from "react-icons/hi";
+import { API_KEY } from "../constants/api";
 import NewDocButton from "./NewDocButton";
 
 interface MovieProps {
@@ -13,24 +16,7 @@ interface MovieProps {
   vote_average: number;
 }
 
-interface GenreItem {
-  id: number;
-  name: string;
-}
-
-function Movie({
-  title,
-  overview,
-  poster_path,
-  vote_average,
-  release_date,
-  genre_ids,
-}: MovieProps) {
-  const genres = useFetch<GenreItem[]>(
-    `${BASE_URL}/genre/tv/list?api_key=${API_KEY}`,
-    []
-  );
-
+function Movie({ title, overview, poster_path }: MovieProps) {
   return (
     <div className="movie">
       <img
@@ -47,10 +33,7 @@ function Movie({
             buttonIcon={<FaPlay />}
           />
 
-          <NewDocButton
-            className="btn-dark"
-            buttonIcon={<HiOutlinePlus />}
-          />
+          <NewDocButton className="btn-dark" buttonIcon={<HiOutlinePlus />} />
           <NewDocButton
             className="btn-dark"
             buttonIcon={<HiOutlineThumbUp />}
