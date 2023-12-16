@@ -6,7 +6,6 @@ function MoviesShows() {
     <div className="body-container padding_top">
       <Slide />
       <Genres />
-      <Genres />
     </div>
   )
 }

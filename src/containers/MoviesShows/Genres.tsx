@@ -51,10 +51,10 @@ function Genres() {
           <h2>Our Genres</h2>
         </div>
         <div className="explore__controler">
-          <div className="swiper-button__prev slider__arrow">
+          <div className="swiper-button_prev slider__arrow">
             <HiArrowNarrowLeft />
           </div>
-          <div className="swiper-button__next slider__arrow">
+          <div className="swiper-button_next slider__arrow">
             <HiArrowNarrowRight />
           </div>
         </div>
@@ -65,8 +65,8 @@ function Genres() {
         ) : (
           <Swiper
             navigation={{
-              nextEl: ".swiper-button__next",
-              prevEl: ".swiper-button__prev",
+              nextEl: ".swiper-button_next",
+              prevEl: ".swiper-button_prev",
             }}
             spaceBetween={3}
             modules={[Navigation]}
