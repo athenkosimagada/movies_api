@@ -79,9 +79,6 @@ function Slide() {
                       title={item.title}
                       overview={item.overview}
                       poster_path={item.backdrop_path}
-                      release_date={item.release_date}
-                      vote_average={item.vote_average}
-                      genre_ids={item.genre_ids}
                     />
                   </SwiperSlide>
                 )

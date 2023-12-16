@@ -8,12 +8,9 @@ import { API_KEY } from "../constants/api";
 import NewDocButton from "./NewDocButton";
 
 interface MovieProps {
-  genre_ids: number[];
   overview: string;
   poster_path: string;
-  release_date: string;
   title: string;
-  vote_average: number;
 }
 
 function Movie({ title, overview, poster_path }: MovieProps) {
