@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../containers/Footer";
@@ -6,10 +6,20 @@ import "../scss/index.scss";
 import Banner from "../containers/Banner";
 import SpinnerLoader from "../constants/SpinnerLoader";
 
-export const LoadingContext = createContext(true);
+export const LoadingContext = createContext({ loading: true, error: "" });
 
 function Layout() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  const { loading: contextLoading, error: contextError } =
+    useContext(LoadingContext);
+
+  useEffect(() => {
+    setError(contextError);
+    setLoading(contextLoading);
+  }, [contextLoading, contextError]);
+
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
@@ -23,14 +33,22 @@ function Layout() {
   }, []);
 
   return (
-    <LoadingContext.Provider value={loading}>
+    <LoadingContext.Provider value={{ loading, error }}>
       <div className="layout">
-        {loading ? <SpinnerLoader /> : (
+        {loading ? (
+          <SpinnerLoader />
+        ) : (
           <>
-            <Navbar />
-            <Outlet />
-            <Banner />
-            <Footer />
+            {error == null ? (
+              <p>{error}</p>
+            ) : (
+              <>
+                <Navbar />
+                <Outlet />
+                <Banner />
+                <Footer />
+              </>
+            )}
           </>
         )}
       </div>

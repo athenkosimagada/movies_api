@@ -75,7 +75,7 @@ function Slide() {
   );
 
   return (
-    <LoadingContext.Provider value={loading}>
+    <LoadingContext.Provider value={{ loading, error }}>
       <div className="container slide">
         {error == null ? (
           <p>{error}</p>

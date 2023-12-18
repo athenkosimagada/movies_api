@@ -17,11 +17,8 @@ interface GenreItem {
 }
 
 function Genres() {
-  const { data, loading } = useFetch<GenreItem[]>(
-    BASE_URL +
-      "/discover/movie?api_key=" +
-      API_KEY +
-      "&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+  const { data, loading, error } = useFetch<GenreItem[]>(
+    BASE_URL + "/genre/tv/list?api_key=" + API_KEY,
     []
   );
 
@@ -41,7 +38,7 @@ function Genres() {
   };
 
   return (
-    <LoadingContext.Provider value={loading}>
+    <LoadingContext.Provider value={{ loading, error }}>
       <div className="container explore">
         <div className="explore__container">
           <div className="explore-content">
