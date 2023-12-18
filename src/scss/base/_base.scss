@@ -79,3 +79,8 @@ a {
 .padding_top {
     padding-top: 100px;
 }
+
+.loader {
+    min-height: 100svh;
+    @include flex;
+}

@@ -5,6 +5,7 @@ import abstract_design from '../assets/images/abstract-design.png';
 import hero from '../assets/images/hero.png';
 import bg_banner from '../assets/images/bg-banner.png';
 import image_icon from '../assets/images/image-icon.png';
+import spinner from '../assets/images/Bean Eater-1s-199px.svg';
 
 const images = {
     hero,
@@ -13,7 +14,8 @@ const images = {
     laptop,
     mobile,
     bg_banner,
-    image_icon
+    image_icon,
+    spinner
 }
 
 export default images;

@@ -1,16 +1,15 @@
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import Genre from "../../components/Genre";
-import { useEffect, useState } from "react";
 import { BASE_URL, API_KEY } from "../../constants/api";
 import { useFetch } from "../../hooks/useFetch";
 import { images } from "../../constants";
+import { LoadingContext } from "../../pages/Layout";
 
 interface GenreItem {
   id: number;
@@ -18,17 +17,13 @@ interface GenreItem {
 }
 
 function Genres() {
-  const [loading, setLoading] = useState(true);
-  const data = useFetch<GenreItem[]>(
-    BASE_URL + "/genre/tv/list?api_key=" + API_KEY,
+  const { data, loading } = useFetch<GenreItem[]>(
+    BASE_URL +
+      "/discover/movie?api_key=" +
+      API_KEY +
+      "&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
     []
   );
-
-  useEffect(() => {
-    if (data.length > 0) {
-      setLoading(false);
-    }
-  }, [data]);
 
   const breaks = {
     0: {
@@ -46,24 +41,22 @@ function Genres() {
   };
 
   return (
-    <div className="container explore">
-      <div className="explore__container">
-        <div className="explore-content">
-          <h2>Our Genres</h2>
-        </div>
-        <div className="explore__controler">
-          <div className="swiper-button_prev slider__arrow">
-            <HiArrowNarrowLeft />
+    <LoadingContext.Provider value={loading}>
+      <div className="container explore">
+        <div className="explore__container">
+          <div className="explore-content">
+            <h2>Our Genres</h2>
           </div>
-          <div className="swiper-button_next slider__arrow">
-            <HiArrowNarrowRight />
+          <div className="explore__controler">
+            <div className="swiper-button_prev slider__arrow">
+              <HiArrowNarrowLeft />
+            </div>
+            <div className="swiper-button_next slider__arrow">
+              <HiArrowNarrowRight />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="explore-type">
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
+        <div className="explore-type">
           <Swiper
             navigation={{
               nextEl: ".swiper-button_next",
@@ -85,9 +78,9 @@ function Genres() {
               </SwiperSlide>
             ))}
           </Swiper>
-        )}
+        </div>
       </div>
-    </div>
+    </LoadingContext.Provider>
   );
 }
 
