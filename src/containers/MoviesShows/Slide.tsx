@@ -12,6 +12,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { API_KEY, BASE_URL } from "../../constants/api";
 import Movie from "../../components/Movie";
 import { LoadingContext } from "../../pages/Layout";
+import NewDocButton from "../../components/NewDocButton";
 
 interface Item {
   id: number;
@@ -84,13 +85,15 @@ function Slide() {
             {swiper}
             {data && swiper ? (
               <div className="pagination">
-                <div className="swiper-button__prev slider__arrow1 btn_arrow">
-                  <HiArrowNarrowLeft />
-                </div>
+                <NewDocButton
+                  className="btn-dark swiper-button__prev slider__arrow1"
+                  buttonIcon={<HiArrowNarrowLeft />}
+                />
                 <div className="swiper-pagination"></div>
-                <div className="swiper-button__next slider__arrow2 btn_arrow">
-                  <HiArrowNarrowRight />
-                </div>
+                <NewDocButton
+                  className="btn-dark swiper-button__next slider__arrow2"
+                  buttonIcon={<HiArrowNarrowRight />}
+                />
               </div>
             ) : null}
           </>

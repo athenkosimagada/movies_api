@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import Genres from "../containers/MoviesShows/Genres"
 import Slide from "../containers/MoviesShows/Slide"
+import Movies from "../containers/MoviesShows/Movies";
 
 function MoviesShows() {
   useEffect(() => {
@@ -14,7 +14,7 @@ function MoviesShows() {
   return (
     <div className="body-container padding_top">
       <Slide />
-      <Genres />
+      <Movies />
     </div>
   )
 }

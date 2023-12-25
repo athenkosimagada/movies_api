@@ -1,22 +1,22 @@
 .banner {
-    border-radius: 8px;
     padding: 6.25em 4em;
     margin: 4.5rem auto;
-
+    
     background: linear-gradient(to right, 
     rgba(15, 15, 15, 1) 10%, 
     rgba(20, 15, 15, 0.9747) 20%, 
     rgba(34, 14, 14, 0.9096) 60%, 
     rgba(229, 0, 0, 0.5)),
-                url('/src/assets/images/bg-banner.png');
+    url('/src/assets/images/bg-banner.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
+    
     @include flex($justify: space-between);
     flex-wrap: wrap;
     gap: 1.25em;
     border: 1px solid $dark-clr-200;
+    border-radius: 8px;
 
     .banner-content {
         display: flex;

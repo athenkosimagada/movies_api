@@ -1,0 +1,15 @@
+.movies {
+    margin-top: 7.5rem;
+    padding: 3.125rem;;
+    border: 1px solid $dark-clr-200;
+    border-radius: 8px;
+
+    position: relative;
+
+    button {
+        position: absolute;
+        top: -1.5rem;
+    }
+
+
+}

@@ -1,7 +1,7 @@
 .navbar {
     @include flex($justify: space-between);
     background: transparent;
-    padding-top: 2rem;
+    height: 120px;
 
     position: absolute;
     top: 0;
