@@ -105,12 +105,6 @@
                 outline: none; 
                 border-color: $primary-clr-100;
             }
-
-            .contact-choice {
-                width: 100%;
-                display: flex;
-                gap: 0.625rem;
-            }
         }
         
         @media screen and (max-width: 620px) {

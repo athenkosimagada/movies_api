@@ -1,5 +1,6 @@
 import NewDocButton from "../../components/NewDocButton";
 import { images } from "../../constants";
+
 function Contact() {
   return (
     <div className="contact">
@@ -34,7 +35,7 @@ function Contact() {
           <div className="contact-cell">
             <h4>Phone Number</h4>
             <div className="contact-choice">
-              <input type="text" placeholder="Enter Phone Number" />
+              <input type='tel' placeholder="Enter Phone Number" />
             </div>
           </div>
         </div>
@@ -49,7 +50,10 @@ function Contact() {
             <input type="checkbox" name="agree" />
             <p>I agree with Terms of Use and Privacy Policy</p>
           </div>
-          <NewDocButton className="btn-primary button" buttonName="Send Message" />
+          <NewDocButton
+            className="btn-primary button"
+            buttonName="Send Message"
+          />
         </div>
       </div>
     </div>
