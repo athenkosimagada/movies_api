@@ -1,6 +1,12 @@
+import Pricing from "../containers/Home/Pricing"
+
 function Subscriptions() {
   return (
-    <div className="container body-container padding_top">Subscriptions</div>
+    <div className="body-container padding_top">
+      <div className="container">
+        <Pricing />
+      </div>
+    </div>
   )
 }
 
