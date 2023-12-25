@@ -6,6 +6,7 @@ import hero from '../assets/images/hero.png';
 import bg_banner from '../assets/images/bg-banner.png';
 import image_icon from '../assets/images/image-icon.png';
 import spinner from '../assets/images/Bean Eater-1s-199px.svg';
+import support from '../assets/images/Container.png';
 
 const images = {
     hero,
@@ -15,7 +16,8 @@ const images = {
     mobile,
     bg_banner,
     image_icon,
-    spinner
+    spinner,
+    support
 }
 
 export default images;

@@ -14,7 +14,7 @@ function NewDocButton({
   return (
     <button {...restProps}>
       {buttonIcon && <span className="btn-icon">{buttonIcon}</span>}
-      {buttonName && <span>{buttonName}</span>}
+      {buttonName && <span className="btn-name">{buttonName}</span>}
     </button>
   );
 }
