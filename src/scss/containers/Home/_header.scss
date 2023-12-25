@@ -26,6 +26,7 @@
 }
 
 .content {
+
     @include flex($direction: column);
     text-align: center;
     gap: 1.5em;
@@ -48,6 +49,14 @@
         @media screen and (max-width: 1280px) {
             font-size: 0.875em;
         }
+    }
+
+    padding: 0 8.375rem 6.625rem 8.375rem;
+    @media screen and (max-width: 1080px) {
+        padding: 0 5.375rem 6.625rem 5.375rem;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 0 1.375rem 6.625rem 1.375rem;
     }
 }
 

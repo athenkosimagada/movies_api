@@ -11,8 +11,8 @@ function SpinnerLoader() {
   
   return (
     <div className="loader body-container padding_top">
-      <img src={images.desktop} alt="Stream Vibe Logo" />
-      <img src={images.spinner} alt="Loadig Spinner" />
+      <img width={100} src={images.desktop} alt="Stream Vibe Logo" />
+      <img width={120} src={images.spinner} alt="Loadig Spinner" />
     </div>
   )
 }

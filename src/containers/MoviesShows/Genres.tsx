@@ -41,9 +41,7 @@ function Genres() {
     <LoadingContext.Provider value={{ loading, error }}>
       <div className="container explore">
         <div className="explore__container">
-          <div className="explore-content">
-            <h2>Our Genres</h2>
-          </div>
+          <h2>Our Genres</h2>
           <div className="explore__controler">
             <div className="swiper-button_prev slider__arrow">
               <HiArrowNarrowLeft />
