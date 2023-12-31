@@ -1,13 +1,18 @@
-import Pricing from "../containers/Home/Pricing"
+import Pricing from "../containers/Home/Pricing";
+import PlansDeatails from "../containers/MoviesShows/Subscriptions/PlansDeatails";
+import { ToggleProvider } from "../utils/ToggleProvider ";
 
 function Subscriptions() {
   return (
-    <div className="body-container padding_top">
-      <div className="container">
-        <Pricing />
+    <ToggleProvider>
+      <div className="body-container padding_top">
+        <div className="container">
+          <Pricing />
+          <PlansDeatails />
+        </div>
       </div>
-    </div>
-  )
+    </ToggleProvider>
+  );
 }
 
-export default Subscriptions
+export default Subscriptions;

@@ -42,24 +42,51 @@ const questions = [
 ];
 
 const yearly = [
-    {
-        name: "Basic Plan",
-        description:
-          "Enjoy an extensive library of movies and shows, featuring a ran",
-        price: 9.99 * 12,
-      },
-      {
-        name: "Standard Plan",
-        description:
-          "Access to a wider selection of movies and shows, including most new releases and exclusive content",
-        price: 12.99 * 12,
-      },
-      {
-        name: "Premium Plan",
-        description:
-          "Access to a widest selection of movies and shows, including all new releases and Offline Viewing",
-        price: 14.99 * 12,
-      },
+  {
+    name: "Basic Plan",
+    description:
+      "Enjoy an extensive library of movies and shows, featuring a ran",
+    price: 9.99 * 12,
+    feature: "Basic",
+    devices: "Watch on one device simultaneously",
+    trail: "7 Days",
+    cancel: "Yes",
+    hdr: "No",
+    dolby: "No",
+    ad: "No",
+    offline: "No",
+    sharing: "No",
+  },
+  {
+    name: "Standard Plan",
+    description:
+      "Access to a wider selection of movies and shows, including most new releases and exclusive content",
+    price: 12.99 * 12,
+    feature: "Standard",
+    devices: "Watch on Two device simultaneously",
+    trail: "7 Days",
+    cancel: "Yes",
+    hdr: "Yes",
+    dolby: "Yes",
+    ad: "Yes",
+    offline: "Yes, for select titles.",
+    sharing: "Yes, up to 5 family members.",
+  },
+  {
+    name: "Premium Plan",
+    description:
+      "Access to a widest selection of movies and shows, including all new releases and Offline Viewing",
+    price: 14.99 * 12,
+    feature: "Premium",
+    devices: "Watch on Four device simultaneously",
+    trail: "7 Days",
+    cancel: "Yes",
+    hdr: "No",
+    dolby: "No",
+    ad: "No",
+    offline: "Yes, for all titles.",
+    sharing: "Yes, for all titles.",
+  },
 ];
 
 const monthly = [
@@ -68,18 +95,45 @@ const monthly = [
     description:
       "Enjoy an extensive library of movies and shows, featuring a ran",
     price: 9.99,
+    feature: "Basic",
+    devices: "Watch on one device simultaneously",
+    trail: "7 Days",
+    cancel: "Yes",
+    hdr: "No",
+    dolby: "No",
+    ad: "No",
+    offline: "No",
+    sharing: "No",
   },
   {
     name: "Standard Plan",
     description:
       "Access to a wider selection of movies and shows, including most new releases and exclusive content",
     price: 12.99,
+    feature: "Standard",
+    devices: "Watch on Two device simultaneously",
+    trail: "7 Days",
+    cancel: "Yes",
+    hdr: "Yes",
+    dolby: "Yes",
+    ad: "Yes",
+    offline: "Yes, for select titles.",
+    sharing: "Yes, up to 5 family members.",
   },
   {
     name: "Premium Plan",
     description:
       "Access to a widest selection of movies and shows, including all new releases and Offline Viewing",
     price: 14.99,
+    feature: "Premium",
+    devices: "Watch on Four device simultaneously",
+    trail: "7 Days",
+    cancel: "Yes",
+    hdr: "No",
+    dolby: "No",
+    ad: "No",
+    offline: "Yes, for all titles.",
+    sharing: "Yes, for all titles.",
   },
 ];
 
