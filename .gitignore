@@ -25,4 +25,4 @@ dist-ssr
 
 # Other files
 
-src/constants/api.tsx
+../constants/api.tsx
