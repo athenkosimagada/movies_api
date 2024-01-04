@@ -11,7 +11,7 @@ interface MovieProps {
   backdrop_path: string
 }
 
-function Movies() {
+function Shows() {
   const { data: trending} = useFetch<MovieProps[]>(
     BASE_URL +
       "/trending/movie/day?language=en-US&api_key=" +
@@ -33,13 +33,13 @@ function Movies() {
 
   return (
     <div className="movies container">
-      <NewDocButton className="btn-primary" buttonName="Movies" />
+      <NewDocButton className="btn-primary" buttonName="TV Shows" />
       <Genres />
-      <CustomContainer data={trending} heading='Trending Now' id={1}/>
-      <CustomContainer data={upcoming} heading='Upcoming'id={2}/>
-      <CustomContainer data={top_rated} heading='Top Rated'id={3}/>
+      <CustomContainer data={trending} heading='Trending Now' id={4}/>
+      <CustomContainer data={upcoming} heading='Upcoming'id={5}/>
+      <CustomContainer data={top_rated} heading='Top Rated'id={6}/>
     </div>
   );
 }
 
-export default Movies;
+export default Shows;

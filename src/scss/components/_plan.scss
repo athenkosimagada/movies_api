@@ -3,18 +3,11 @@
     display: grid;
     grid-auto-columns: auto 1fr auto;
     gap: 3.125rem;
-    cursor: pointer;
-
+    
     border: 1px solid $dark-clr-500;
     border-radius: 12px;
 
     padding: 3.125rem;
-
-    &:hover {
-        transition: all 0.3s ease-in;
-        border: 1px solid $primary-clr-800;
-        color: $primary-clr-800;
-    }
 
 
     .plan-content {

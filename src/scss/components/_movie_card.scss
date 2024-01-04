@@ -1,0 +1,47 @@
+.movie_card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    cursor: pointer;
+
+    img {
+        transition: all .3s ease-in;
+    }
+
+    img:hover {
+        opacity: 0.5;
+    }
+
+    .movie_card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        h4 {
+            font-size: 18px;
+            padding-right: 18px;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .min-text {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .rate {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            color: $primary-clr-800;
+        }
+
+        .date {
+            color: $grey-clr-500;
+        }
+    }
+}

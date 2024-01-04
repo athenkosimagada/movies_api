@@ -6,6 +6,7 @@ import {
 } from "react-icons/hi";
 import { API_KEY } from "../constants/api";
 import NewDocButton from "./NewDocButton";
+import { useLayoutEffect, useState } from "react";
 
 interface MovieProps {
   overview: string;
@@ -14,12 +15,15 @@ interface MovieProps {
 }
 
 function Movie({ title, overview, poster_path }: MovieProps) {
+  const [image, setImage] = useState("");
+  useLayoutEffect(() => {
+    setImage(
+      `https://image.tmdb.org/t/p/original${poster_path}?api_key=${API_KEY}`
+    );
+  }, []);
   return (
     <div className="movie">
-      <img
-        src={`https://image.tmdb.org/t/p/original${poster_path}?api_key=${API_KEY}`}
-        alt={`${title} Poster`}
-      />
+      <img src={image} alt={`${title} Poster`} loading="lazy" />
       <div className="movie_content">
         <h1>{title}</h1>
         <p className="overview">{overview}</p>

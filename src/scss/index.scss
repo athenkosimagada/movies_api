@@ -8,6 +8,10 @@
 @import './components/question';
 @import './components/plan';
 @import './components/movie';
+@import './components/movie_card';
+
+// All pages
+@import './containers/customcontainer';
 
 // Home
 @import './containers/Home/header';

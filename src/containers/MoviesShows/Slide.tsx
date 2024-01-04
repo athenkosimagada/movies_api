@@ -11,7 +11,6 @@ import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { useFetch } from "../../hooks/useFetch";
 import { API_KEY, BASE_URL } from "../../constants/api";
 import Movie from "../../components/Movie";
-import { LoadingContext } from "../../pages/Layout";
 import NewDocButton from "../../components/NewDocButton";
 
 interface Item {
@@ -32,11 +31,8 @@ interface Item {
 }
 
 function Slide() {
-  const { data, loading, error } = useFetch<Item[]>(
-    BASE_URL +
-      "/discover/movie?api_key=" +
-      API_KEY +
-      "&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+  const { data } = useFetch<Item[]>(
+    BASE_URL + "/movie/now_playing?language=en-US&page=1&api_key=" + API_KEY,
     []
   );
 
@@ -76,30 +72,22 @@ function Slide() {
   );
 
   return (
-    <LoadingContext.Provider value={{ loading, error }}>
-      <div className="container slide">
-        {error == null ? (
-          <p>{error}</p>
-        ) : (
-          <>
-            {swiper}
-            {data && swiper ? (
-              <div className="pagination">
-                <NewDocButton
-                  className="btn-dark swiper-button__prev slider__arrow1"
-                  buttonIcon={<HiArrowNarrowLeft />}
-                />
-                <div className="swiper-pagination"></div>
-                <NewDocButton
-                  className="btn-dark swiper-button__next slider__arrow2"
-                  buttonIcon={<HiArrowNarrowRight />}
-                />
-              </div>
-            ) : null}
-          </>
-        )}
-      </div>
-    </LoadingContext.Provider>
+    <div className="container slide">
+      {swiper}
+      {data && swiper ? (
+        <div className="pagination">
+          <NewDocButton
+            className="btn-dark swiper-button__prev slider__arrow1"
+            buttonIcon={<HiArrowNarrowLeft />}
+          />
+          <div className="swiper-pagination"></div>
+          <NewDocButton
+            className="btn-dark swiper-button__next slider__arrow2"
+            buttonIcon={<HiArrowNarrowRight />}
+          />
+        </div>
+      ) : null}
+    </div>
   );
 }
 
