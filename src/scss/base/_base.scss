@@ -30,6 +30,7 @@ html {
 }
 
 .layout {
+    position: relative;
     background-color: $dark-clr-700;
     color: $absolute-white;
     font-family: $font-family;
@@ -77,7 +78,7 @@ a {
 }
 
 .padding_top {
-    padding-top: 120px;
+    margin-top: 120px;
 }
 
 .loader {
@@ -92,4 +93,13 @@ h2 {
 img {
     max-width: 100%;
     border-radius: 12px;
+}
+
+.spinner {
+    position: absolute;
+    inset: 0;
+
+    @include flex;
+    background-color: $dark-clr-800;
+    z-index: 999999;
 }

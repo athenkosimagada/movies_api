@@ -4,26 +4,19 @@ import {
   HiOutlineThumbUp,
   HiOutlineVolumeUp,
 } from "react-icons/hi";
-import { API_KEY } from "../constants/api";
 import NewDocButton from "./NewDocButton";
-import { useLayoutEffect, useState } from "react";
+import apiConfig from "../api/apiConfig";
 
 interface MovieProps {
   overview: string;
-  poster_path: string;
+  backdrop_path: string;
   title: string;
 }
 
-function Movie({ title, overview, poster_path }: MovieProps) {
-  const [image, setImage] = useState("");
-  useLayoutEffect(() => {
-    setImage(
-      `https://image.tmdb.org/t/p/original${poster_path}?api_key=${API_KEY}`
-    );
-  }, []);
+function Movie({ title, overview, backdrop_path }: MovieProps) {
   return (
     <div className="movie">
-      <img src={image} alt={`${title} Poster`} loading="lazy" />
+      <img src={apiConfig.originalImage(backdrop_path)} alt={`${title} Poster`} loading="lazy" />
       <div className="movie_content">
         <h1>{title}</h1>
         <p className="overview">{overview}</p>

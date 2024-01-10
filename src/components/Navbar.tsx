@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   HiOutlineBell,
   HiOutlineSearch,
@@ -20,6 +20,32 @@ import Social from "./Social";
 function Navbar() {
   const [width, setWidth] = useState<number>(getWidth());
   const [toggle, setToggle] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+
+  useEffect(() => {
+    const storedActiveLink = localStorage.getItem("activeLink");
+    const currentPath = window.location.pathname;
+
+    const movieOrTvPathRegex = /^(\/movie\/\d+|\/tv\/\d+)$/;
+    const isMovieOrTvPath = movieOrTvPathRegex.test(currentPath);
+
+    if (isMovieOrTvPath) {
+      setActiveLink("/movies&shows");
+      localStorage.setItem("activeLink", "/movies&shows");
+    } else if (!storedActiveLink || currentPath == "/") {
+      setActiveLink("/");
+      localStorage.setItem("activeLink", "/");
+    } else {
+      setActiveLink(currentPath);
+    }
+  }, []);
+
+  function handleLinkClick(to: string) {
+    setActiveLink(to);
+    setToggle(false);
+
+    localStorage.setItem("activeLink", to);
+  }
 
   function getWidth(): number {
     return window.innerWidth;
@@ -32,6 +58,39 @@ function Navbar() {
   function handleClick() {
     setToggle(!toggle);
   }
+
+  const links = (
+    <>
+      <CustomLink
+        to="/"
+        isActive={activeLink === "/"}
+        onClick={() => handleLinkClick("/")}
+      >
+        Home
+      </CustomLink>
+      <CustomLink
+        to="/movies&shows"
+        isActive={activeLink === "/movies&shows"}
+        onClick={() => handleLinkClick("/movies&shows")}
+      >
+        Movies & Shows
+      </CustomLink>
+      <CustomLink
+        to="/support"
+        isActive={activeLink === "/support"}
+        onClick={() => handleLinkClick("/support")}
+      >
+        support
+      </CustomLink>
+      <CustomLink
+        to="/subscriptions"
+        isActive={activeLink === "/subscriptions"}
+        onClick={() => handleLinkClick("/subscriptions")}
+      >
+        Subscriptions
+      </CustomLink>
+    </>
+  );
   return (
     <div className="container navbar">
       <Link to="/">
@@ -47,12 +106,7 @@ function Navbar() {
       </Link>
       {width > 867 ? (
         <>
-          <ul className="nav">
-            <CustomLink to="/">Home</CustomLink>
-            <CustomLink to="/movies&shows">Movies & Shows</CustomLink>
-            <CustomLink to="/support">support</CustomLink>
-            <CustomLink to="/subscriptions">Subscriptions</CustomLink>
-          </ul>
+          <ul className="nav clicked">{links}</ul>
           <div className="navbar-icons">
             <HiOutlineSearch />
             <HiOutlineBell />
@@ -88,20 +142,7 @@ function Navbar() {
                 </div>
               </div>
               <div className="nav-mobile">
-                <ul className="nav-togggle">
-                  <CustomLink to="/" handleClick={handleClick}>
-                    Home
-                  </CustomLink>
-                  <CustomLink to="/movies&shows" handleClick={handleClick}>
-                    Movies & Shows
-                  </CustomLink>
-                  <CustomLink to="/support" handleClick={handleClick}>
-                    support
-                  </CustomLink>
-                  <CustomLink to="/subscriptions" handleClick={handleClick}>
-                    Subscriptions
-                  </CustomLink>
-                </ul>
+                <ul className="nav-togggle clicked">{links}</ul>
                 <div className="navigation-socials">
                   <Social name="Facebook" icon={<FaFacebookF />} />
                   <Social name="X" icon={<FaXTwitter />} />

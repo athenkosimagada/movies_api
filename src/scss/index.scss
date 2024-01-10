@@ -1,4 +1,5 @@
 @import './base/base';
+@import './base/nopage';
 
 @import './components/navbar';
 @import './components/social';
@@ -23,6 +24,7 @@
 
 
 // Movies And Shows
+@import './containers/MoviesShows/moviesShows';
 @import './containers/MoviesShows/slide';
 @import './containers/MoviesShows/movies';
 
@@ -31,6 +33,12 @@
 
 // Subscriptions
 @import './containers/Subscriptions/plans';
+
+// Details
+@import './containers/Details/details';
+@import './containers/Details/contents';
+@import './containers/Details/reviews';
+@import './containers/Details/castslist';
 
 // Layout
 @import './containers/banner';

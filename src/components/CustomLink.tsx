@@ -1,23 +1,15 @@
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link } from "react-router-dom";
 interface CustomLinkProps {
   to: string;
   children: React.ReactNode;
-  handleClick?: () => void;
+  isActive: boolean;
+  onClick?: () => void;
 }
 
-function CustomLink({ to, children, handleClick, ...props }: CustomLinkProps) {
-  const resolvePath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvePath.pathname, end: true });
-
-  const onClick = () => {
-    if (handleClick) {
-      handleClick();
-    }
-  };
-
+function CustomLink({ to, isActive, children, ...props }: CustomLinkProps) {
   return (
     <li className={isActive ? "active" : ""}>
-      <Link to={to} onClick={onClick} {...props}>
+      <Link to={to} {...props}>
         {children}
       </Link>
     </li>

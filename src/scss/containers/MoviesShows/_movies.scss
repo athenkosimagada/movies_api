@@ -16,6 +16,12 @@
         margin-top: 7.5rem;
     }
     @media screen and (max-width: 768px) {
-        margin-top: 4.5rem;
+        margin-top: 0;
+        button {
+            display: none;
+        }
+
+        border: none;
+        padding: 3.125rem 0;
     }
 }

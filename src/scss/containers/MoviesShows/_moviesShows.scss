@@ -1,0 +1,53 @@
+.toogle_btn {
+    display: flex;
+    background-color: $dark-clr-800;
+    border: 1px solid $dark-clr-400;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-top: 4.5rem;
+
+    .active {
+        background-color: $grey-clr-800;
+        border-radius: 6px;
+        color: $absolute-white;
+    }
+    > * {
+        flex: 1;
+        background: transparent;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: $grey-clr-800;
+        border: none;
+        padding: 0.75rem 1.25rem;
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-container {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .movies-container {
+      display: none;
+    }
+  
+    .shows-container {
+      display: none;
+    }
+  
+    .movies-container.visible {
+      display: block;
+    }
+  
+    .shows-container.visible {
+      display: block;
+    }
+}

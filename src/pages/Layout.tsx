@@ -4,13 +4,17 @@ import Footer from "../containers/Footer";
 import "../scss/index.scss";
 import Banner from "../containers/Banner";
 import { ToggleProvider } from "../utils/ToggleProvider ";
+import { Suspense } from "react";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function Layout() {
   return (
     <ToggleProvider>
       <div className="layout">
         <Navbar />
-        <Outlet />
+        <Suspense fallback={<LoadingSpinner />}>
+          <Outlet />
+        </Suspense>
         <Banner />
         <Footer />
       </div>

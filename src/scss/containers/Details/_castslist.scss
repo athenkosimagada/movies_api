@@ -1,0 +1,18 @@
+.casts {
+
+    .actor {
+        p {
+            font-size: 18px;
+            padding-right: 8px;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.swiper-pagination {
+    background-color: green;
+    position: relative;
+}

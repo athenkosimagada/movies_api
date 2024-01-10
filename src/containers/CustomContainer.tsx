@@ -10,24 +10,17 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 
-interface MovieProps {
-  title: string;
-  vote_average: number;
-  release_date: string;
-  poster_path: string;
-  backdrop_path: string;
-}
-
 interface ContainerProps {
-  data: MovieProps[];
+  data: any[];
   heading: string;
-  id:number;
+  type: string;
+  id: number;
 }
 
-function CustomContainer({ data, heading, id }: ContainerProps) {
+function CustomContainer({ data, heading, type, id }: ContainerProps) {
   const breaks = {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 2,
     },
     480: {
       slidesPerView: 2,
@@ -73,7 +66,7 @@ function CustomContainer({ data, heading, id }: ContainerProps) {
             movie &&
             movie.poster_path && (
               <SwiperSlide key={index}>
-                <MovieCard movie={movie} />
+                <MovieCard movie={movie} type={type} />
               </SwiperSlide>
             )
         )}

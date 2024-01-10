@@ -1,10 +1,13 @@
+import { lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import MoviesShows from "./pages/MoviesShows";
-import Subscriptions from "./pages/Subscriptions";
-import Support from "./pages/Support";
-import NoPage from "./pages/NoPage";
+const Layout = lazy(() => wait(5000).then(() => import("./pages/Layout")));
+const Home = lazy(() => wait(5000).then(() => import("./pages/Home")));
+const MoviesShows = lazy(() => wait(5000).then(() => import("./pages/MoviesShows")));
+const Subscriptions = lazy(() => wait(5000).then(() => import("./pages/Subscriptions")));
+const Support = lazy(() => wait(5000).then(() => import("./pages/Support")));
+const NoPage = lazy(() => wait(5000).then(() => import("./pages/NoPage")));
+const Details = lazy(() => wait(5000).then(() => import("./pages/Details")));
+
 
 function App() {
   return (
@@ -13,6 +16,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/movies&shows" element={<MoviesShows />} />
+          <Route path="/:category/:id" element={<Details />} />
           <Route path="/subscriptions" element={<Subscriptions />} />
           <Route path="/support" element={<Support />} />
           <Route path="*" element={<NoPage />} />
@@ -22,4 +26,9 @@ function App() {
   );
 }
 
+function wait(time: number) {
+  return new Promise(resolve => {
+    setTimeout(resolve, time);
+  })
+}
 export default App;

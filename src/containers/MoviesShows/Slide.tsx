@@ -8,33 +8,48 @@ import "swiper/css/navigation";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
-import { useFetch } from "../../hooks/useFetch";
-import { API_KEY, BASE_URL } from "../../constants/api";
 import Movie from "../../components/Movie";
 import NewDocButton from "../../components/NewDocButton";
+import { useEffect, useState } from "react";
+import tmdbApi from "../../api/tmdbApi";
+import { Genre } from "../../api/apiTypes";
+import { Language } from "../../pages/Details";
+import NoPage from "../../pages/NoPage";
 
 interface Item {
   id: number;
-  original_title: string;
-  adult: boolean;
-  backdrop_path: string;
-  genre_ids: number[];
-  original_language: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  release_date: string;
   title: string;
-  video: boolean;
+  name: string;
+  overview: string;
+  backdrop_path: string;
+  poster_path: string;
+  genres: Genre[];
   vote_average: number;
-  vote_count: number;
+  first_air_date: string;
+  release_date: string;
+  spoken_languages: Language[];
+  runtime: number;
 }
 
 function Slide() {
-  const { data } = useFetch<Item[]>(
-    BASE_URL + "/movie/now_playing?language=en-US&page=1&api_key=" + API_KEY,
-    []
-  );
+  const [data, setData] = useState<Item[]>([]);
+
+  useEffect(() => {
+    const getAll = async () => {
+      const params = {
+        page: 1,
+        language:'en-US'
+      }
+      try {
+        const response = await tmdbApi.getAllList({params});
+        setData(response.results);
+      } catch {
+        return <NoPage />;
+      }
+    };
+
+    getAll();
+  }, []);
 
   const swiper = (
     <Swiper
@@ -54,16 +69,15 @@ function Slide() {
       loop={true}
       className="movie-swiper"
     >
-      {data.slice(5, 15).map(
-        (item: Item) =>
-          item &&
-          item.genre_ids &&
+      {data.slice(0, 5).map(
+        (item) =>
+          item.genres &&
           item.backdrop_path && (
             <SwiperSlide key={item.id}>
               <Movie
-                title={item.title}
+                title={item.title ? item.title : item.name}
                 overview={item.overview}
-                poster_path={item.backdrop_path}
+                backdrop_path={item.backdrop_path}
               />
             </SwiperSlide>
           )

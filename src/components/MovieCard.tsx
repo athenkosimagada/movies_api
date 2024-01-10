@@ -1,37 +1,47 @@
-import { useLayoutEffect, useState } from "react";
-import { API_KEY } from "../constants/api";
 import { HiStar } from "react-icons/hi";
-
-interface MovieProps {
-  title: string;
-  vote_average: number;
-  release_date: string;
-  poster_path: string;
-  backdrop_path: string;
-}
+import { Link } from "react-router-dom";
+import apiConfig from "../api/apiConfig";
 
 interface CardPorps {
-  movie: MovieProps;
+  movie: any;
+  type: string;
 }
 
-function MovieCard({ movie }: CardPorps) {
-  const [image, setImage] = useState("");
-  useLayoutEffect(() => {
-    setImage(
-      `https://image.tmdb.org/t/p/original${movie.poster_path}?api_key=${API_KEY}`
-    );
-  }, []);
+function MovieCard({ movie, type }: CardPorps) {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="movie_card">
-      <img src={image} alt={movie.title} loading="lazy" />
-      <div className="movie_card-content">
-        <h4>{movie.title}</h4>
-        <div className="min-text">
-          <p className="rate"><HiStar /><span>{movie.vote_average.toFixed(2)}</span></p>
-          <p className="date">{movie.release_date}</p>
+      <Link
+        to={`/${type == "m" ? "movie" : "tv"}/${movie.id}`}
+        onClick={handleClick}
+      >
+        <img
+          src={apiConfig.w500Image(movie.poster_path)}
+          alt={movie.title}
+        />
+        <div className="movie_card-content">
+          <h4>
+            {movie.title}
+            {movie.name}
+          </h4>
+          <div className="min-text">
+            <p className="rate">
+              <HiStar />
+              <span>{movie.vote_average.toFixed(2)}</span>
+            </p>
+            <p className="date">
+              {movie.release_date}
+              {movie.first_air_date}
+            </p>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

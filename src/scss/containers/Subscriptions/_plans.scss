@@ -118,44 +118,4 @@
             }
         }
     }
-
-    /*.pricing-table {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        border-radius: 12px;
-        border: 1px solid $dark-clr-400;
-
-        overflow: hidden;
-
-        .plan-details {
-            flex: 1;
-
-            display: grid;
-            grid-template-rows: repeat(5, 1fr);
-
-            h3 {
-                background-color: $dark-clr-800;
-                font-size: 1.25rem;
-                font-weight: 500;
-            }
-
-            p {
-                color: $grey-clr-800;
-            }
-            > * {
-                padding: 1.875rem;
-                display: flex;
-                align-items: center;
-            }
-
-            > *:not(:last-child) {
-                border-bottom: 1px solid $dark-clr-400;
-            }
-        }
-
-        .plan-details:not(:last-child) {
-            border-right: 1px solid $dark-clr-400;
-        }
-    }*/
 }

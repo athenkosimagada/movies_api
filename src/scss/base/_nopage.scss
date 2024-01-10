@@ -1,0 +1,12 @@
+.no_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+
+    position: absolute;
+    inset: 0;
+    z-index: 9999999999999;
+    background-color: $dark-clr-600;
+}

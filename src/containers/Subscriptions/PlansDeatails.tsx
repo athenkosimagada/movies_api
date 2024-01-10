@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import data from "../../../constants/data";
-import { useToggleContext } from "../../../utils/ToggleProvider ";
+import data from "../../constants/data";
+import { useToggleContext } from "../../utils/ToggleProvider ";
 
 function PlansDeatails() {
   const [activeIndex, setActiveIndex] = useState<number>(1);
@@ -14,8 +14,6 @@ function PlansDeatails() {
     } else {
       setPlans(data.yearly);
     }
-
-    console.log(plan);
   }, [plan]);
 
   function handgleChange(index: number) {

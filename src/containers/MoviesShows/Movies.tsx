@@ -1,43 +1,77 @@
+import { useEffect, useState } from "react";
+import tmdbApi, { category, movieType } from "../../api/tmdbApi";
 import NewDocButton from "../../components/NewDocButton";
-import { API_KEY, BASE_URL } from "../../constants/api";
-import { useFetch } from "../../hooks/useFetch";
 import CustomContainer from "../CustomContainer";
 import Genres from "./Genres";
-interface MovieProps {
+import NoPage from "../../pages/NoPage";
+interface Movie {
+  id: number;
   title: string;
   vote_average: number;
   release_date: string;
   poster_path: string;
-  backdrop_path: string
 }
 
 function Movies() {
-  const { data: trending} = useFetch<MovieProps[]>(
-    BASE_URL +
-      "/trending/movie/day?language=en-US&api_key=" +
-      API_KEY,
-    []
-  );
-  const { data: upcoming} = useFetch<MovieProps[]>(
-    BASE_URL +
-      "/movie/upcoming?language=en-US&page=1&api_key=" +
-      API_KEY,
-    []
-  );
-  const { data: top_rated} = useFetch<MovieProps[]>(
-    BASE_URL +
-      "/movie/top_rated?language=en-US&page=1&api_key=" +
-      API_KEY,
-    []
-  );
+  const [popular, setPopular] = useState<Movie[]>([]);
+  const [upcoming, setUpcoming] = useState<Movie[]>([]);
+  const [top_rated, setTopRated] = useState<Movie[]>([]);
 
+  useEffect(() => {
+    const getPopular = async () => {
+      const params = {
+        page: 1,
+        language: "en-US",
+      };
+      try {
+        const response = await tmdbApi.getMoviesList(movieType.popular, {
+          params,
+        });
+        setPopular(response.results);
+      } catch {
+        return <NoPage />;
+      }
+    };
+    const getUpcoming = async () => {
+      const params = {
+        page: 1,
+        language: "en-US",
+      };
+      try {
+        const response = await tmdbApi.getMoviesList(movieType.upcoming, {
+          params,
+        });
+        setUpcoming(response.results);
+      } catch {
+        return <NoPage />;
+      }
+    };
+    const getTopRated = async () => {
+      const params = {
+        page: 1,
+        language: "en-US",
+      };
+      try {
+        const response = await tmdbApi.getMoviesList(movieType.top_rated, {
+          params,
+        });
+        setTopRated(response.results);
+      } catch {
+        return <NoPage />;
+      }
+    };
+
+    getPopular();
+    getUpcoming();
+    getTopRated();
+  }, []);
   return (
     <div className="movies container">
       <NewDocButton className="btn-primary" buttonName="Movies" />
-      <Genres />
-      <CustomContainer data={trending} heading='Trending Now' id={1}/>
-      <CustomContainer data={upcoming} heading='Upcoming'id={2}/>
-      <CustomContainer data={top_rated} heading='Top Rated'id={3}/>
+      <Genres id={2} category={category.movie} />
+      <CustomContainer data={popular} heading="Popular" type="m" id={1} />
+      <CustomContainer data={upcoming} heading="Upcoming" type="m" id={2} />
+      <CustomContainer data={top_rated} heading="Top Rated" type="m" id={3} />
     </div>
   );
 }

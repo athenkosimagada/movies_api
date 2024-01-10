@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -6,20 +7,31 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import Genre from "../../components/Genre";
-import { BASE_URL, API_KEY } from "../../constants/api";
-import { useFetch } from "../../hooks/useFetch";
 import { images } from "../../constants";
 
-interface GenreItem {
+import tmdbApi, { category } from "../../api/tmdbApi";
+import NoPage from "../../pages/NoPage";
+
+interface Genre {
   id: number;
   name: string;
 }
 
 function Explore() {
-  const { data: fetchedData } = useFetch<GenreItem[]>(
-    BASE_URL + "/genre/tv/list?api_key=" + API_KEY,
-    []
-  );
+  const [genres, setGenres] = useState<Genre[]>([]);
+
+  useEffect(() => {
+    const getGenres = async () => {
+      try {
+        const response = await tmdbApi.getGenres(category.tv);
+        setGenres(response.genres);
+      } catch {
+        return <NoPage />;
+      }
+    };
+
+    getGenres();
+  }, []);
 
   const breaks = {
     0: {
@@ -66,7 +78,7 @@ function Explore() {
           modules={[Navigation, Autoplay]}
           className="genre-swiper"
         >
-          {fetchedData.map((genre: GenreItem) => (
+          {genres.map((genre) => (
             <SwiperSlide key={genre.id}>
               <Genre type={genre.name} image={images.image_icon} />
             </SwiperSlide>
