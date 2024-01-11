@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 interface CustomLinkProps {
   to: string;
   children: React.ReactNode;
@@ -9,9 +8,9 @@ interface CustomLinkProps {
 function CustomLink({ to, isActive, children, ...props }: CustomLinkProps) {
   return (
     <li className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
+      <a href={to} {...props}>
         {children}
-      </Link>
+      </a>
     </li>
   );
 }
