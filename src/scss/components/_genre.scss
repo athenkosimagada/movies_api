@@ -14,13 +14,7 @@
 
     padding: 1.875rem;
     margin: 1rem 0;
-
-    &:hover {
-        transition: all 0.3s ease-in;
-        border: 1px solid $primary-clr-800;
-        color: $primary-clr-800;
-    }
-
+    
     img {
         max-width: 100%;
         padding: 1.5rem;
