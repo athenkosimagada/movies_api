@@ -38,11 +38,12 @@ function Slide() {
     const getAll = async () => {
       const params = {
         page: 1,
-        language:'en-US'
-      }
+        language: "en-US",
+      };
       try {
-        const response = await tmdbApi.getAllList({params});
+        const response = await tmdbApi.getAllList({ params });
         setData(response.results);
+        console.log(response.results);
       } catch {
         return <NoPage />;
       }
@@ -69,9 +70,8 @@ function Slide() {
       loop={true}
       className="movie-swiper"
     >
-      {data.slice(0, 5).map(
+      {data.slice(0, 10).map(
         (item) =>
-          item.genres &&
           item.backdrop_path && (
             <SwiperSlide key={item.id}>
               <Movie

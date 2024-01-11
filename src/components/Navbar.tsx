@@ -21,6 +21,8 @@ function Navbar() {
   const [width, setWidth] = useState<number>(getWidth());
   const [toggle, setToggle] = useState(false);
   const [activeLink, setActiveLink] = useState("");
+  const [navbarBg, setNavbarBg] = useState("transparent");
+  const [boxShadow, setBoxShadow] = useState("transparent");
 
   useEffect(() => {
     const storedActiveLink = localStorage.getItem("activeLink");
@@ -38,6 +40,26 @@ function Navbar() {
     } else {
       setActiveLink(currentPath);
     }
+  }, []);
+
+  useEffect(() => {
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      // Change the background color based on the scroll position
+      if (scrollPosition > 0) {
+        setNavbarBg("#0F0F0F");
+        setBoxShadow("0 2px 5px rgba(250, 250, 250, 0.1)");
+      } else {
+        setNavbarBg("transparent");
+        setBoxShadow("none");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   function handleLinkClick(to: string) {
@@ -92,7 +114,10 @@ function Navbar() {
     </>
   );
   return (
-    <div className="container navbar">
+    <div
+      className="container navbar"
+      style={{ backgroundColor: navbarBg, boxShadow: boxShadow }}
+    >
       <Link to="/">
         {width <= 414 && (
           <img className="logo" src={images.mobile} alt="Logo" />
