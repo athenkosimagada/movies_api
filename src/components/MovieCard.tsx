@@ -4,10 +4,9 @@ import apiConfig from "../api/apiConfig";
 
 interface CardPorps {
   movie: any;
-  type: string;
 }
 
-function MovieCard({ movie, type }: CardPorps) {
+function MovieCard({ movie }: CardPorps) {
   const handleClick = () => {
     window.scrollTo({
       top: 0,
@@ -18,7 +17,7 @@ function MovieCard({ movie, type }: CardPorps) {
   return (
     <div className="movie_card">
       <Link
-        to={`/${type == "m" ? "movie" : "tv"}/${movie.id}`}
+        to={`/${movie.name ? "tv" : "movie"}/${movie.id}`}
         onClick={handleClick}
       >
         <img

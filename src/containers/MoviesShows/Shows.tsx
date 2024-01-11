@@ -69,9 +69,9 @@ function Shows() {
     <div className="movies container">
       <NewDocButton className="btn-primary" buttonName="TV Shows" />
       <Genres id={1} category={category.tv} />
-      <CustomContainer data={popular} heading='Popular' type="t" id={4}/>
-      <CustomContainer data={onTheAir} heading='On The Air' type="t" id={5}/>
-      <CustomContainer data={top_rated} heading='Top Rated' type="t" id={6}/>
+      <CustomContainer data={popular} heading='Popular' id={4}/>
+      <CustomContainer data={onTheAir} heading='On The Air' id={5}/>
+      <CustomContainer data={top_rated} heading='Top Rated' id={6}/>
     </div>
   );
 }

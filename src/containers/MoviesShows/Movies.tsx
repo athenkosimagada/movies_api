@@ -69,9 +69,9 @@ function Movies() {
     <div className="movies container">
       <NewDocButton className="btn-primary" buttonName="Movies" />
       <Genres id={2} category={category.movie} />
-      <CustomContainer data={popular} heading="Popular" type="m" id={1} />
-      <CustomContainer data={upcoming} heading="Upcoming" type="m" id={2} />
-      <CustomContainer data={top_rated} heading="Top Rated" type="m" id={3} />
+      <CustomContainer data={popular} heading="Popular" id={1} />
+      <CustomContainer data={upcoming} heading="Upcoming"  id={2} />
+      <CustomContainer data={top_rated} heading="Top Rated"  id={3} />
     </div>
   );
 }

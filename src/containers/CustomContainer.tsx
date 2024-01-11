@@ -13,11 +13,10 @@ import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 interface ContainerProps {
   data: any[];
   heading: string;
-  type: string;
   id: number;
 }
 
-function CustomContainer({ data, heading, type, id }: ContainerProps) {
+function CustomContainer({ data, heading, id }: ContainerProps) {
   const breaks = {
     0: {
       slidesPerView: 2,
@@ -66,7 +65,7 @@ function CustomContainer({ data, heading, type, id }: ContainerProps) {
             movie &&
             movie.poster_path && (
               <SwiperSlide key={index}>
-                <MovieCard movie={movie} type={type} />
+                <MovieCard movie={movie} />
               </SwiperSlide>
             )
         )}
