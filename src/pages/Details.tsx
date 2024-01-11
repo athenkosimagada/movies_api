@@ -86,7 +86,7 @@ function Details() {
         )}
 
         <Reviews />
-        <CustomContainer data={similar} heading="Similar" type={category} id={7} />
+        <CustomContainer data={similar} heading="Similar" id={7} />
       </div>
     </div>
   );
