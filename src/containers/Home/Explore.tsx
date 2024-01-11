@@ -35,7 +35,7 @@ function Explore() {
 
   const breaks = {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 2,
     },
     480: {
       slidesPerView: 2,
