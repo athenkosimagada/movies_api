@@ -61,13 +61,13 @@ function CastList() {
         <div>
           <Swiper
             navigation={{
-              nextEl: `.swiper-button_next${id}`,
-              prevEl: `.swiper-button_prev${id}`,
+              nextEl: `.swiper-button-next${id}`,
+              prevEl: `.swiper-button-prev${id}`,
             }}
             spaceBetween={3}
             breakpoints={breaks}
             pagination={{
-              el: ".swiper-pagination",
+              el: `.swiper-pagination${id}`,
               clickable: true,
             }}
             modules={[Navigation, Pagination, Autoplay]}
@@ -89,6 +89,9 @@ function CastList() {
                 )
             )}
           </Swiper>
+          <div className="pagination-cast">
+            <div className={`swiper-pagination${id} cast-list`}></div>
+          </div>
         </div>
       </div>
     </div>

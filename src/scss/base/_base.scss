@@ -97,7 +97,9 @@ img {
 
 .spinner {
     position: absolute;
-    inset: 0;
+    top: 0;
+    height: 100svh;
+    width: 100vw;
 
     @include flex;
     background-color: $dark-clr-800;

@@ -12,3 +12,22 @@
     }
 }
 
+.pagination-cast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cast-list {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding-top: 2rem;
+        .swiper-pagination-bullet {
+            width: 16px;
+            height: 4px;
+            background-color: $primary-clr-800;
+            border-radius: 4px;
+        }
+    }
+}
+
