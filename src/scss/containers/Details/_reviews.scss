@@ -5,6 +5,21 @@
     padding: 3.125rem;
     margin-top: 1.875rem;
 
+    max-height: 30rem;
+    overflow-y: auto; 
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-clr-800) var(--primary-clr-800);
+
+    &::-webkit-scrollbar { 
+        width: 12px;  
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary-clr-800);
+        border-radius: 6px;  
+    }
+
     .actor {
         display: flex;
         flex-direction: column;
