@@ -1,5 +1,5 @@
 import ClipLoader from "react-spinners/ClipLoader";
-import { CSSProperties } from "react";
+import { CSSProperties, useEffect } from "react";
 
 const override: CSSProperties = {
   display: "block",
@@ -9,12 +9,18 @@ const override: CSSProperties = {
 };
 
 function LoadingSpinner() {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, []);
   return (
     <div className="spinner">
       <ClipLoader
         loading={true}
         cssOverride={override}
-        size={150}
+        size={60}
         aria-label="Loading Spinner"
         data-testid="loader"
       />
