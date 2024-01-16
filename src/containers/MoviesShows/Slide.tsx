@@ -16,7 +16,6 @@ import { Genre } from "../../api/apiTypes";
 import { Language } from "../../pages/Details";
 import NoPage from "../../pages/NoPage";
 
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 interface Item {

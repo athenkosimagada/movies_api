@@ -6,10 +6,9 @@ import {
 } from "react-icons/hi";
 import NewDocButton from "./NewDocButton";
 import apiConfig from "../api/apiConfig";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import Skeleton from "react-loading-skeleton";
 
 interface MovieProps {
   overview: string;
